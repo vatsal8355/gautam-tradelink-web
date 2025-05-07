@@ -15,7 +15,7 @@ const ContactCTA = () => {
             <Button asChild size="lg" className="bg-[#E7F9F3] text-[#0F5E59] hover:bg-[#E7F9F3]/90">
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-white border-white/20 hover:bg-white/10">
+            <Button asChild size="lg" className="bg-[#E7F9F3] text-[#0F5E59] hover:bg-[#E7F9F3]/90">
               <Link to="/brochure">Download Brochure</Link>
             </Button>
           </div>

@@ -21,7 +21,7 @@ const buttonVariants = cva(
         call: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90 px-4 py-2 rounded-md",
         explore: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90 px-6 py-3 rounded-md",
         contact: "border border-[#0E766E] text-[#0E766E] bg-white hover:bg-[#E7F9F3] px-6 py-3 rounded-md",
-        brochure: "bg-[#00BF7B] text-white hover:bg-[#00BF7B]/90 px-6 py-3 rounded-md",
+        brochure: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90 px-6 py-3 rounded-md",
       },
       size: {
         default: "h-10 px-4 py-2",

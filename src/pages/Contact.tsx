@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { z } from "zod";
@@ -99,6 +98,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-medium mb-1">Phone</h3>
+                        <p className="text-muted-foreground mb-1">Vatsalbhai Shah</p>
                         <a
                           href="tel:+919867041134"
                           className="text-muted-foreground hover:text-primary transition-colors"
@@ -151,12 +151,8 @@ const Contact = () => {
                   <h3 className="font-semibold mb-3">Business Hours</h3>
                   <ul className="space-y-2 text-sm">
                     <li className="flex justify-between">
-                      <span className="text-muted-foreground">Monday - Friday</span>
-                      <span>9:00 AM - 6:00 PM</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-muted-foreground">Saturday</span>
-                      <span>10:00 AM - 4:00 PM</span>
+                      <span className="text-muted-foreground">Monday - Saturday</span>
+                      <span>10:00 AM - 6:30 PM</span>
                     </li>
                     <li className="flex justify-between">
                       <span className="text-muted-foreground">Sunday</span>

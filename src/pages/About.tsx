@@ -43,9 +43,9 @@ const About = () => {
         {/* Hero Section */}
         <section className="pt-32 pb-16 bg-primary">
           <div className="container-custom">
-            <div className="max-w-3xl text-white">
-              <h1 className="heading-xl mb-6">About Gautam Tradelink</h1>
-              <p className="text-lg opacity-90">
+            <div className="max-w-3xl">
+              <h1 className="heading-xl mb-6 text-[#0F5E59]">About Gautam Tradelink</h1>
+              <p className="text-lg opacity-90 text-white">
                 Your trusted sourcing partner for pharmaceutical raw materials and
                 active ingredients.
               </p>
@@ -56,36 +56,25 @@ const About = () => {
         {/* Company Overview */}
         <section className="section-padding">
           <div className="container-custom">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="heading-lg">Our Company</h2>
-                <p className="text-muted-foreground">
-                  Gautam Tradelink is a leading supplier of pharmaceutical raw materials,
-                  specifically focused on Active Pharmaceutical Ingredients (APIs),
-                  Excipients, Nutraceuticals, and Chemical Intermediates. Based in
-                  Mumbai with a strong presence in Gujarat, we've built a reputation
-                  for quality and reliability in the pharmaceutical industry.
-                </p>
-                <p className="text-muted-foreground">
-                  Under the leadership of our proprietor, Mr. Vatsalbhai Shah, we have
-                  developed an extensive network of suppliers and manufacturers, allowing
-                  us to source the highest quality products that meet international standards.
-                </p>
-                <p className="text-muted-foreground">
-                  Our team consists of industry professionals with deep knowledge of
-                  pharmaceutical raw materials and regulatory requirements, enabling
-                  us to provide not just products but comprehensive sourcing solutions.
-                </p>
-              </div>
-
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-secondary/30 to-primary/20 opacity-70 blur-lg rounded-lg"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoYXJtYWNldXRpY2FsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                  alt="Pharmaceutical Industry"
-                  className="relative rounded-lg w-full h-auto object-cover shadow-lg"
-                />
-              </div>
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="heading-lg mb-10">Our Company</h2>
+              <p className="text-muted-foreground mb-4">
+                Gautam Tradelink is a leading supplier of pharmaceutical raw materials,
+                specifically focused on Active Pharmaceutical Ingredients (APIs),
+                Excipients, Nutraceuticals, and Chemical Intermediates. Based in
+                Mumbai with a strong presence in Gujarat, we've built a reputation
+                for quality and reliability in the pharmaceutical industry.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Under the leadership of our proprietor, Mr. Vatsalbhai Shah, we have
+                developed an extensive network of suppliers and manufacturers, allowing
+                us to source the highest quality products that meet international standards.
+              </p>
+              <p className="text-muted-foreground">
+                Our team consists of industry professionals with deep knowledge of
+                pharmaceutical raw materials and regulatory requirements, enabling
+                us to provide not just products but comprehensive sourcing solutions.
+              </p>
             </div>
           </div>
         </section>

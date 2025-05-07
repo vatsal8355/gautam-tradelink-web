@@ -27,15 +27,23 @@ const Products = () => {
       icon: FlaskRound,
       products: [
         "Azythromycin",
-        "Paracetamol",
         "Metformin HCl",
         "Amoxicillin",
-        "Omeprazole",
         "Diclofenac Sodium",
         "Ciprofloxacin",
         "Atorvastatin Calcium",
         "Losartan Potassium",
-        "Ceftriaxone Sodium"
+        "Ceftriaxone Sodium",
+        "Aceclofenac",
+        "Levamisole HCL",
+        "Rutin",
+        "Sucralfate",
+        "Telmisartan",
+        "Tritinoin",
+        "Amoxicillin Trihydrate", 
+        "Cefotaxime sodium sterile",
+        "Enrofloxacin",
+        "Montelukast sodium"
       ]
     },
     excipients: {
@@ -50,9 +58,12 @@ const Products = () => {
         "Croscarmellose Sodium",
         "Sodium Starch Glycolate",
         "Talc (Pharmaceutical Grade)",
-        "Colloidal Silicon Dioxide",
         "Stearic Acid",
-        "Pregelatinized Starch"
+        "Aspartame", 
+        "Lactose",
+        "HPMC pthalate",
+        "Glycine",
+        "Potassium citrate"
       ]
     },
     nutraceuticals: {
@@ -66,12 +77,17 @@ const Products = () => {
         "Lutein",
         "Omega-3 Fatty Acids",
         "L-Carnitine",
-        "Glucosamine Sulfate",
         "Lycopene",
         "Green Tea Extract",
         "Curcumin",
-        "Chondroitin Sulfate",
-        "Resveratrol"
+        "Resveratrol",
+        "Dbiotin",
+        "Inositol",
+        "Vitamin C (plain/coated)",
+        "Thiamine (Vitamin B1)",
+        "Riboflavin (Vitamin B2)",
+        "Beta Carotene (Synthetic/Natural)",
+        "Folic acid"
       ]
     },
     intermediates: {

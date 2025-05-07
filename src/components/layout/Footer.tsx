@@ -88,7 +88,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Phone size={18} className="mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <p className="font-medium">Vatsal Shah</p>
+                  <p className="font-medium">Vatsalbhai Shah</p>
                   <p>+91 9867041134</p>
                 </div>
               </li>

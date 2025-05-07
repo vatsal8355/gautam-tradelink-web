@@ -53,11 +53,14 @@ const Navbar = () => {
           <img
             src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
             alt="Gautam Tradelink Logo"
-            className="h-10 w-10 rounded-full bg-[#0F5E59] p-1"
+            className="h-12 w-12 rounded-full bg-[#0F5E59] p-1"
           />
-          <h1 className="text-xl font-bold text-[#0F5E59]">
-            Gautam Tradelink
-          </h1>
+          <div className="flex flex-col items-center">
+            <h1 className="text-2xl font-bold text-[#0F5E59]">
+              Gautam Tradelink
+            </h1>
+            <p className="text-sm font-semibold text-[#00BF7B]">Trusted Sourcing Partner</p>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

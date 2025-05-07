@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { FlaskRound, Pill, TestTube, Package } from "lucide-react";
@@ -9,7 +8,7 @@ const categories = [
     title: "Active Pharmaceutical Ingredients",
     icon: FlaskRound,
     description: "High-quality active ingredients for pharmaceutical formulations",
-    examples: ["Azythromycin", "Paracetamol", "Metformin HCl"],
+    examples: ["Azythromycin", "Metformin HCl", "Aceclofenac"],
     bgClass: "bg-primary/5"
   },
   {
@@ -17,7 +16,7 @@ const categories = [
     title: "Excipients",
     icon: Pill,
     description: "Essential inactive ingredients for pharmaceutical manufacturing",
-    examples: ["Microcrystalline Cellulose", "Lactose Monohydrate", "Povidone (PVP)"],
+    examples: ["Microcrystalline Cellulose", "Lactose Monohydrate", "Aspartame"],
     bgClass: "bg-secondary/10"
   },
   {
@@ -25,7 +24,7 @@ const categories = [
     title: "Nutraceuticals",
     icon: TestTube,
     description: "Natural ingredients with health benefits for nutritional supplements",
-    examples: ["Vitamin A", "Coenzyme Q10", "Green Tea Extract"],
+    examples: ["Vitamin A", "Vitamin C (plain/coated)", "Beta Carotene"],
     bgClass: "bg-emerald-50"
   },
   {
