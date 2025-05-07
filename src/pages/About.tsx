@@ -1,5 +1,4 @@
-
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { ShieldCheck, Clock, Eye, Award } from "lucide-react";
 
 const About = () => {
