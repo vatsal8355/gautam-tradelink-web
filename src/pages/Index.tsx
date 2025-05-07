@@ -3,7 +3,7 @@ import Hero from "@/components/home/Hero";
 import ProductCategories from "@/components/home/ProductCategories";
 import AboutSection from "@/components/home/AboutSection";
 import ContactCTA from "@/components/home/ContactCTA";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (

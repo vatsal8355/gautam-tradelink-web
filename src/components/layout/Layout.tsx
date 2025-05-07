@@ -4,7 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CallButton from "./CallButton";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Layout = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Gautam Tradelink - Trusted Sourcing Partner</title>
         <meta name="description" content="Your trusted sourcing partner for pharmaceutical API and raw materials." />
@@ -24,7 +24,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
       <CallButton />
-    </>
+    </HelmetProvider>
   );
 };
 

@@ -1,6 +1,6 @@
 
-import { useState } from "react";
-import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FlaskRound, Pill, TestTube, Package, ShieldCheck } from "lucide-react";
 
@@ -14,65 +14,12 @@ const Products = () => {
   };
 
   // Check for hash in URL on component mount and set active tab accordingly
-  useState(() => {
+  useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (["api", "excipients", "nutraceuticals", "intermediates"].includes(hash)) {
       setActiveCategory(hash);
     }
-  });
-
-  const products = {
-    api: [
-      { name: "Azythromycin", description: "Macrolide antibiotic used to treat bacterial infections" },
-      { name: "Paracetamol", description: "Analgesic and antipyretic medication" },
-      { name: "Metformin HCl", description: "Oral diabetes medication that helps control blood sugar levels" },
-      { name: "Amoxicillin", description: "Penicillin antibiotic used to treat bacterial infections" },
-      { name: "Omeprazole", description: "Proton pump inhibitor that decreases stomach acid production" },
-      { name: "Diclofenac Sodium", description: "Non-steroidal anti-inflammatory drug (NSAID)" },
-      { name: "Ciprofloxacin", description: "Fluoroquinolone antibiotic for treating bacterial infections" },
-      { name: "Atorvastatin Calcium", description: "Medication to treat high cholesterol and reduce heart disease risk" },
-      { name: "Losartan Potassium", description: "Angiotensin II receptor blocker used to treat high blood pressure" },
-      { name: "Ceftriaxone Sodium", description: "Third-generation cephalosporin antibiotic" }
-    ],
-    excipients: [
-      { name: "Microcrystalline Cellulose", description: "Used as a binding agent, diluent, and disintegrant" },
-      { name: "Lactose Monohydrate", description: "Common diluent in tablet and capsule formulations" },
-      { name: "Magnesium Stearate", description: "Lubricant in tablet and capsule manufacturing" },
-      { name: "Povidone (PVP)", description: "Binder and solubilizer in pharmaceutical formulations" },
-      { name: "Croscarmellose Sodium", description: "Super disintegrant for tablet formulations" },
-      { name: "Sodium Starch Glycolate", description: "Disintegrant in pharmaceutical formulations" },
-      { name: "Talc (Pharmaceutical Grade)", description: "Anti-caking agent and glidant" },
-      { name: "Colloidal Silicon Dioxide", description: "Flow aid and anti-caking agent" },
-      { name: "Stearic Acid", description: "Tablet and capsule lubricant" },
-      { name: "Pregelatinized Starch", description: "Binder, diluent, and disintegrant" }
-    ],
-    nutraceuticals: [
-      { name: "Vitamin A", description: "Essential for vision, immune function, and cell growth" },
-      { name: "Vitamin K3", description: "Important for blood clotting and bone health" },
-      { name: "Coenzyme Q10", description: "Antioxidant that helps generate energy in cells" },
-      { name: "Lutein", description: "Carotenoid important for eye health" },
-      { name: "Omega-3 Fatty Acids", description: "Essential fatty acids with heart and brain benefits" },
-      { name: "L-Carnitine", description: "Amino acid derivative that helps convert fat into energy" },
-      { name: "Glucosamine Sulfate", description: "Supports joint health and cartilage formation" },
-      { name: "Lycopene", description: "Carotenoid with antioxidant properties" },
-      { name: "Green Tea Extract", description: "Rich in antioxidants with various health benefits" },
-      { name: "Curcumin", description: "Active compound in turmeric with anti-inflammatory properties" },
-      { name: "Chondroitin Sulfate", description: "Supports joint health and flexibility" },
-      { name: "Resveratrol", description: "Natural compound with antioxidant properties" }
-    ],
-    intermediates: [
-      { name: "Acetic Anhydride", description: "Used in synthesis of aspirin and other pharmaceuticals" },
-      { name: "Benzaldehyde", description: "Organic compound used in various pharmaceutical syntheses" },
-      { name: "Sodium Borohydride", description: "Reducing agent in pharmaceutical synthesis" },
-      { name: "Ethyl Acetate", description: "Solvent used in drug extraction and purification" },
-      { name: "p-Toluenesulfonic Acid", description: "Catalyst in various pharmaceutical reactions" },
-      { name: "Acetone (Pharmaceutical Grade)", description: "Common solvent in pharmaceutical manufacturing" },
-      { name: "Dimethylformamide (DMF)", description: "Polar solvent used in pharmaceutical synthesis" },
-      { name: "Tetrahydrofuran (THF)", description: "Ether solvent used in pharmaceutical chemistry" },
-      { name: "Isopropyl Alcohol", description: "Solvent and disinfectant in pharmaceutical applications" },
-      { name: "Methanol (HPLC Grade)", description: "High-purity solvent for analysis and synthesis" }
-    ]
-  };
+  }, []);
 
   const categoryInfo = {
     api: {
@@ -156,7 +103,7 @@ const Products = () => {
                 </TabsTrigger>
               </TabsList>
 
-              {Object.keys(products).map((category) => (
+              {Object.keys(categoryInfo).map((category) => (
                 <TabsContent key={category} value={category} className="space-y-8">
                   <div className="bg-muted p-6 rounded-lg">
                     <div className="flex items-start space-x-4">
@@ -177,30 +124,12 @@ const Products = () => {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {products[category as keyof typeof products].map((product, index) => (
-                      <div 
-                        key={index} 
-                        className="border border-border rounded-lg p-5 hover:shadow-md transition-shadow bg-white"
-                      >
-                        <h3 className="font-semibold mb-2 text-lg">
-                          {product.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm">
-                          {product.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-primary/5 rounded-lg p-6 mt-6">
-                    <h3 className="font-semibold mb-3">Need more information?</h3>
-                    <p className="text-muted-foreground mb-3">
-                      Our product catalog extends beyond what's listed here. 
-                      If you're looking for specific pharmaceutical ingredients 
-                      or have questions about our products, please contact us.
+                  <div className="bg-white p-6 rounded-lg border border-border">
+                    <h3 className="text-lg font-medium mb-4">Product Categories Coming Soon</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Our comprehensive product catalog is currently being updated. Please contact us for specific product inquiries in the meantime.
                     </p>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-4 mt-6">
                       <a href="/contact" className="btn-primary inline-flex">
                         Contact Us
                       </a>
