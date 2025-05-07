@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FlaskRound, Pill, TestTube, Package } from "lucide-react";
+import { FlaskRound, Pill, TestTube, Package, ShieldCheck } from "lucide-react";
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("api");
@@ -161,9 +161,10 @@ const Products = () => {
                   <div className="bg-muted p-6 rounded-lg">
                     <div className="flex items-start space-x-4">
                       <div className="p-3 bg-white rounded-full mt-1">
-                        {categoryInfo[category as keyof typeof categoryInfo].icon && 
-                          <categoryInfo[category as keyof typeof categoryInfo].icon className="h-5 w-5 text-primary" />
-                        }
+                        {(() => {
+                          const IconComponent = categoryInfo[category as keyof typeof categoryInfo].icon;
+                          return <IconComponent className="h-5 w-5 text-primary" />;
+                        })()}
                       </div>
                       <div>
                         <h2 className="text-xl font-semibold mb-2">
