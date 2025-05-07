@@ -1,14 +1,22 @@
-
 import { Helmet } from "react-helmet-async";
 import { FileText, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Brochure = () => {
-  // Function to simulate brochure download
+  // Function to handle brochure download
   const downloadBrochure = () => {
-    // Placeholder for actual download functionality
-    // In a real implementation, this would trigger download of an actual PDF file
-    console.log("Brochure download triggered");
+    // Create a link to the PDF file in the public directory
+    const pdfUrl = "/Gautam Tradelink- Product.pdf";
+    
+    // Create a virtual link element
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Gautam Tradelink- Product.pdf"; // Set the download filename
+    
+    // Append to the document body, click it, and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     
     // Show toast notification
     const event = new CustomEvent("toast", {
@@ -19,11 +27,6 @@ const Brochure = () => {
       }
     });
     window.dispatchEvent(event);
-    
-    // Simulating download behavior
-    setTimeout(() => {
-      alert("In a real implementation, this would download the actual brochure PDF. For now, this is just a simulation.");
-    }, 500);
   };
 
   return (
