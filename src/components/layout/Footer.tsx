@@ -1,17 +1,16 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#0F5E59] text-white">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src="/public/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
+                src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
                 alt="Gautam Tradelink Logo"
                 className="h-10 w-10 bg-white rounded-full p-1"
               />
@@ -28,27 +27,27 @@ const Footer = () => {
             <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:text-secondary transition-colors">
+                <Link to="/" className="hover:text-[#E7F9F3] transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-secondary transition-colors">
+                <Link to="/about" className="hover:text-[#E7F9F3] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-secondary transition-colors">
+                <Link to="/products" className="hover:text-[#E7F9F3] transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-secondary transition-colors">
+                <Link to="/contact" className="hover:text-[#E7F9F3] transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/brochure" className="hover:text-secondary transition-colors">
+                <Link to="/brochure" className="hover:text-[#E7F9F3] transition-colors">
                   Download Brochure
                 </Link>
               </li>
@@ -60,22 +59,22 @@ const Footer = () => {
             <h3 className="text-xl font-semibold">Our Products</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products#api" className="hover:text-secondary transition-colors">
+                <Link to="/products#api" className="hover:text-[#E7F9F3] transition-colors">
                   Active Pharmaceutical Ingredients
                 </Link>
               </li>
               <li>
-                <Link to="/products#excipients" className="hover:text-secondary transition-colors">
+                <Link to="/products#excipients" className="hover:text-[#E7F9F3] transition-colors">
                   Excipients
                 </Link>
               </li>
               <li>
-                <Link to="/products#nutraceuticals" className="hover:text-secondary transition-colors">
+                <Link to="/products#nutraceuticals" className="hover:text-[#E7F9F3] transition-colors">
                   Nutraceuticals
                 </Link>
               </li>
               <li>
-                <Link to="/products#intermediates" className="hover:text-secondary transition-colors">
+                <Link to="/products#intermediates" className="hover:text-[#E7F9F3] transition-colors">
                   Intermediates & Chemicals
                 </Link>
               </li>
@@ -88,15 +87,18 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Phone size={18} className="mt-0.5 flex-shrink-0" />
-                <span className="text-sm">+91 9867041134</span>
+                <div className="text-sm">
+                  <p className="font-medium">Vatsal Shah</p>
+                  <p>+91 9867041134</p>
+                </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
                 <div className="text-sm flex flex-col">
-                  <a href="mailto:Gautamtradelink@hotmail.com" className="hover:text-secondary transition-colors">
+                  <a href="mailto:Gautamtradelink@hotmail.com" className="hover:text-[#E7F9F3] transition-colors">
                     Gautamtradelink@hotmail.com
                   </a>
-                  <a href="mailto:Marketing.gautamtradelink@hotmail.com" className="hover:text-secondary transition-colors">
+                  <a href="mailto:Marketing.gautamtradelink@hotmail.com" className="hover:text-[#E7F9F3] transition-colors">
                     Marketing.gautamtradelink@hotmail.com
                   </a>
                 </div>

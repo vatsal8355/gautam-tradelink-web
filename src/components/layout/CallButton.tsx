@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,11 +20,11 @@ const CallButton = () => {
       <Button
         size="lg"
         className={cn(
-          "rounded-full w-14 h-14 bg-secondary shadow-lg hover:bg-secondary/90 transition-all",
+          "rounded-full w-14 h-14 bg-[#0E766E] shadow-lg hover:bg-[#0E766E]/90 transition-all",
           isAnimating && "animate-pulse"
         )}
       >
-        <Phone className="h-6 w-6 text-foreground" />
+        <Phone className="h-6 w-6 text-white" />
       </Button>
     </a>
   );

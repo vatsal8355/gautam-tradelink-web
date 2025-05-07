@@ -9,15 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-[#0F5E59] text-[#0F5E59] bg-background hover:bg-[#E7F9F3]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-[#E7F9F3] text-[#0F5E59] hover:bg-[#E7F9F3]/80",
+        ghost: "hover:bg-[#E7F9F3] hover:text-[#0F5E59]",
+        link: "text-[#0E766E] underline-offset-4 hover:underline",
+        call: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90 px-4 py-2 rounded-md",
+        explore: "bg-[#0E766E] text-white hover:bg-[#0E766E]/90 px-6 py-3 rounded-md",
+        contact: "border border-[#0E766E] text-[#0E766E] bg-white hover:bg-[#E7F9F3] px-6 py-3 rounded-md",
+        brochure: "bg-[#00BF7B] text-white hover:bg-[#00BF7B]/90 px-6 py-3 rounded-md",
       },
       size: {
         default: "h-10 px-4 py-2",

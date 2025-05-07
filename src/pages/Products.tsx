@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -25,22 +24,72 @@ const Products = () => {
     api: {
       title: "Active Pharmaceutical Ingredients",
       description: "High-quality active ingredients for pharmaceutical formulations",
-      icon: FlaskRound
+      icon: FlaskRound,
+      products: [
+        "Azythromycin",
+        "Paracetamol",
+        "Metformin HCl",
+        "Amoxicillin",
+        "Omeprazole",
+        "Diclofenac Sodium",
+        "Ciprofloxacin",
+        "Atorvastatin Calcium",
+        "Losartan Potassium",
+        "Ceftriaxone Sodium"
+      ]
     },
     excipients: {
       title: "Excipients",
       description: "Essential inactive ingredients for pharmaceutical manufacturing",
-      icon: Pill
+      icon: Pill,
+      products: [
+        "Microcrystalline Cellulose",
+        "Lactose Monohydrate",
+        "Magnesium Stearate",
+        "Povidone (PVP)",
+        "Croscarmellose Sodium",
+        "Sodium Starch Glycolate",
+        "Talc (Pharmaceutical Grade)",
+        "Colloidal Silicon Dioxide",
+        "Stearic Acid",
+        "Pregelatinized Starch"
+      ]
     },
     nutraceuticals: {
       title: "Nutraceuticals",
       description: "Natural ingredients with health benefits for nutritional supplements",
-      icon: TestTube
+      icon: TestTube,
+      products: [
+        "Vitamin A",
+        "Vitamin K3",
+        "Coenzyme Q10",
+        "Lutein",
+        "Omega-3 Fatty Acids",
+        "L-Carnitine",
+        "Glucosamine Sulfate",
+        "Lycopene",
+        "Green Tea Extract",
+        "Curcumin",
+        "Chondroitin Sulfate",
+        "Resveratrol"
+      ]
     },
     intermediates: {
       title: "Intermediates & Chemicals",
       description: "Specialized chemicals for pharmaceutical synthesis",
-      icon: Package
+      icon: Package,
+      products: [
+        "Acetic Anhydride",
+        "Benzaldehyde",
+        "Sodium Borohydride",
+        "Ethyl Acetate",
+        "p-Toluenesulfonic Acid",
+        "Acetone (Pharmaceutical Grade)",
+        "Dimethylformamide (DMF)",
+        "Tetrahydrofuran (THF)",
+        "Isopropyl Alcohol",
+        "Methanol (HPLC Grade)"
+      ]
     }
   };
 
@@ -125,11 +174,15 @@ const Products = () => {
                   </div>
 
                   <div className="bg-white p-6 rounded-lg border border-border">
-                    <h3 className="text-lg font-medium mb-4">Product Categories Coming Soon</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Our comprehensive product catalog is currently being updated. Please contact us for specific product inquiries in the meantime.
-                    </p>
-                    <div className="flex flex-wrap gap-4 mt-6">
+                    <h3 className="text-lg font-medium mb-4">Our Products</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {categoryInfo[category as keyof typeof categoryInfo].products.map((product, index) => (
+                        <div key={index} className="p-3 bg-muted rounded-md text-center">
+                          <span className="font-medium text-[#0F5E59]">{product}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-4 mt-8">
                       <a href="/contact" className="btn-primary inline-flex">
                         Contact Us
                       </a>
@@ -145,57 +198,45 @@ const Products = () => {
         </section>
 
         {/* Quality Assurance Section */}
-        <section className="section-padding bg-muted">
+        <section className="section-padding bg-[#E7F9F3]">
           <div className="container-custom">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1583911860204-6865e3c84cdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHF1YWxpdHklMjBjb250cm9sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                  alt="Quality Control"
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-              <div className="space-y-6">
-                <h2 className="heading-lg">Quality Assurance</h2>
-                <p className="text-muted-foreground">
-                  At Gautam Tradelink, quality is our highest priority. All products we supply 
-                  undergo rigorous testing and quality control measures to ensure they meet 
-                  international standards including IP, BP, and USP specifications.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="p-2 bg-primary text-primary-foreground rounded-full mt-1">
-                      <ShieldCheck className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Certified Products</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Products supplied with complete documentation and certificates of analysis
-                      </p>
-                    </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="heading-lg mb-6">Quality Assurance</h2>
+              <p className="text-[#0F5E59] mb-10">
+                At Gautam Tradelink, quality is our highest priority. All products we supply 
+                undergo rigorous testing and quality control measures to ensure they meet 
+                international standards including IP, BP, and USP specifications.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-8 mt-10">
+                <div className="flex flex-col items-center text-center">
+                  <div className="p-3 bg-[#0F5E59] text-white rounded-full mb-4">
+                    <ShieldCheck className="h-5 w-5" />
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="p-2 bg-primary text-primary-foreground rounded-full mt-1">
-                      <ShieldCheck className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Reliable Sourcing</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Sourced exclusively from approved manufacturers with established quality systems
-                      </p>
-                    </div>
+                  <h3 className="font-medium text-[#0F5E59] mb-2">Certified Products</h3>
+                  <p className="text-sm text-[#0F5E59]/80">
+                    Products supplied with complete documentation and certificates of analysis
+                  </p>
+                </div>
+                
+                <div className="flex flex-col items-center text-center">
+                  <div className="p-3 bg-[#0F5E59] text-white rounded-full mb-4">
+                    <ShieldCheck className="h-5 w-5" />
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="p-2 bg-primary text-primary-foreground rounded-full mt-1">
-                      <ShieldCheck className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Batch Consistency</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Rigorous testing ensures consistent quality across all product batches
-                      </p>
-                    </div>
+                  <h3 className="font-medium text-[#0F5E59] mb-2">Reliable Sourcing</h3>
+                  <p className="text-sm text-[#0F5E59]/80">
+                    Sourced exclusively from approved manufacturers with established quality systems
+                  </p>
+                </div>
+                
+                <div className="flex flex-col items-center text-center">
+                  <div className="p-3 bg-[#0F5E59] text-white rounded-full mb-4">
+                    <ShieldCheck className="h-5 w-5" />
                   </div>
+                  <h3 className="font-medium text-[#0F5E59] mb-2">Batch Consistency</h3>
+                  <p className="text-sm text-[#0F5E59]/80">
+                    Rigorous testing ensures consistent quality across all product batches
+                  </p>
                 </div>
               </div>
             </div>
