@@ -149,36 +149,70 @@ const Products = () => {
               onValueChange={handleTabChange}
               className="w-full"
             >
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
-                <TabsTrigger value="api" className="flex items-center space-x-2" id="api">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 mb-[3rem] sm:mb-8">
+                <TabsTrigger 
+                  value="api" 
+                  className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
+                  id="api"
+                >
                   <FlaskRound className="h-4 w-4" />
                   <span>APIs</span>
                 </TabsTrigger>
-                <TabsTrigger value="excipients" className="flex items-center space-x-2" id="excipients">
+                <TabsTrigger 
+                  value="excipients" 
+                  className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
+                  id="excipients"
+                >
                   <Pill className="h-4 w-4" />
                   <span>Excipients</span>
                 </TabsTrigger>
-                <TabsTrigger value="nutraceuticals" className="flex items-center space-x-2" id="nutraceuticals">
+                <TabsTrigger 
+                  value="nutraceuticals" 
+                  className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
+                  id="nutraceuticals"
+                >
                   <TestTube className="h-4 w-4" />
                   <span>Nutraceuticals</span>
                 </TabsTrigger>
-                <TabsTrigger value="intermediates" className="flex items-center space-x-2" id="intermediates">
+                <TabsTrigger 
+                  value="intermediates" 
+                  className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
+                  id="intermediates"
+                >
                   <Package className="h-4 w-4" />
                   <span>Intermediates</span>
                 </TabsTrigger>
               </TabsList>
 
               {Object.keys(categoryInfo).map((category) => (
-                <TabsContent key={category} value={category} className="space-y-8">
+                <TabsContent key={category} value={category} className="space-y-8 pt-[2.5rem] sm:pt-0">
                   <div className="bg-muted p-6 rounded-lg">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-white rounded-full mt-1">
+                    <div className="flex md:items-start md:space-x-4">
+                      <div className="hidden md:block p-3 bg-white rounded-full mt-1">
                         {(() => {
                           const IconComponent = categoryInfo[category as keyof typeof categoryInfo].icon;
                           return <IconComponent className="h-5 w-5 text-primary" />;
                         })()}
                       </div>
-                      <div>
+                      
+                      {/* Mobile only version */}
+                      <div className="md:hidden flex flex-col items-center text-center w-full mb-4">
+                        <div className="p-3 bg-white rounded-full mb-3">
+                          {(() => {
+                            const IconComponent = categoryInfo[category as keyof typeof categoryInfo].icon;
+                            return <IconComponent className="h-5 w-5 text-primary" />;
+                          })()}
+                        </div>
+                        <h2 className="text-xl font-semibold mb-2">
+                          {categoryInfo[category as keyof typeof categoryInfo].title}
+                        </h2>
+                        <p className="text-muted-foreground">
+                          {categoryInfo[category as keyof typeof categoryInfo].description}
+                        </p>
+                      </div>
+                      
+                      {/* Desktop only version */}
+                      <div className="hidden md:block">
                         <h2 className="text-xl font-semibold mb-2">
                           {categoryInfo[category as keyof typeof categoryInfo].title}
                         </h2>
