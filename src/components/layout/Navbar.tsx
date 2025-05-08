@@ -3,8 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
+  const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -29,9 +31,10 @@ const Navbar = () => {
     };
   }, []);
 
-  const closeMenu = () => {
+  // Close menu when route changes
+  useEffect(() => {
     setIsOpen(false);
-  };
+  }, [location.pathname]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -41,82 +44,54 @@ const Navbar = () => {
     { name: "Brochure", path: "/brochure" },
   ];
 
-  return (
-    <header
-      className={cn(
-        "fixed w-full z-50 transition-all duration-300 bg-white shadow-sm",
-        scrolled && "shadow-md py-2"
-      )}
-    >
-      <div className="container-custom py-2 flex items-center justify-between">
-        {/* Logo and Company Name - Visible on all screen sizes */}
-        <Link to="/" className="flex items-center space-x-2 md:space-x-3" onClick={closeMenu}>
+  // Mobile Navbar Component
+  const MobileNavbar = () => (
+    <>
+      <div className="flex items-center justify-between w-full py-2">
+        {/* Logo and company name */}
+        <Link to="/" className="flex items-center space-x-2">
           <img
             src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
             alt="Gautam Tradelink Logo"
-            className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-[#0F5E59] p-1"
+            className="h-8 w-8 rounded-full bg-[#0F5E59] p-1"
           />
-          <div className="flex flex-col items-center">
-            <h1 className="text-lg md:text-2xl font-bold text-[#0F5E59] leading-tight">
+          <div className="flex flex-col">
+            <h1 className="text-lg font-bold text-[#0F5E59] leading-tight">
               Gautam Tradelink
             </h1>
-            <p className="text-xs md:text-sm font-semibold text-[#00BF7B]">Trusted Sourcing Partner</p>
+            <p className="text-xs font-semibold text-[#00BF7B]">
+              Trusted Sourcing Partner
+            </p>
           </div>
         </Link>
 
-        {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden lg:flex items-center">
-          <div className="flex space-x-8 xl:space-x-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={cn(
-                  "font-medium transition-colors hover:text-[#0E766E]",
-                  location.pathname === link.path
-                    ? "text-[#0E766E]"
-                    : "text-[#0F5E59]"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-          <Button asChild variant="call" size="sm" className="ml-6 xl:ml-10">
-            <Link to="/contact">Call Us</Link>
-          </Button>
-        </nav>
-
-        {/* Mobile Hamburger Menu Button - Only visible on mobile */}
-        <div className="lg:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-            className="text-[#0F5E59] hover:text-[#0E766E] hover:bg-[#E7F9F3]"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
-        </div>
+        {/* Hamburger Menu Button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+          className="text-[#0F5E59]"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
       </div>
 
-      {/* Mobile Navigation Menu - Slides down when hamburger is clicked */}
+      {/* Mobile Menu Dropdown */}
       <div
         className={cn(
-          "fixed inset-x-0 top-[60px] bg-white shadow-md lg:hidden transition-transform duration-300 ease-in-out z-40",
-          isOpen ? "translate-y-0" : "-translate-y-full"
+          "fixed inset-x-0 top-[60px] bg-white shadow-md transition-all duration-300 z-40 overflow-hidden",
+          isOpen ? "max-h-96 py-4" : "max-h-0"
         )}
       >
-        <div className="container-custom py-6 flex flex-col space-y-4">
-          <nav className="flex flex-col space-y-3">
+        <div className="container-custom flex flex-col space-y-2">
+          <nav className="flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                onClick={closeMenu}
                 className={cn(
-                  "px-4 py-2 rounded-md transition-colors",
+                  "px-4 py-3 rounded-md transition-colors font-medium",
                   location.pathname === link.path
                     ? "bg-[#E7F9F3] text-[#0E766E]"
                     : "text-[#0F5E59] hover:bg-[#E7F9F3]/50"
@@ -125,13 +100,69 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button asChild variant="call" className="mt-2">
-              <Link to="/contact" onClick={closeMenu}>
-                Call Us
-              </Link>
-            </Button>
+            <div className="mt-4 px-4">
+              <Button asChild variant="call" className="w-full">
+                <Link to="/contact">Call Us</Link>
+              </Button>
+            </div>
           </nav>
         </div>
+      </div>
+    </>
+  );
+
+  // Desktop Navbar Component
+  const DesktopNavbar = () => (
+    <div className="flex items-center justify-between py-3">
+      <Link to="/" className="flex items-center space-x-3">
+        <img
+          src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
+          alt="Gautam Tradelink Logo"
+          className="h-12 w-12 rounded-full bg-[#0F5E59] p-1"
+        />
+        <div className="flex flex-col items-center">
+          <h1 className="text-2xl font-bold text-[#0F5E59]">
+            Gautam Tradelink
+          </h1>
+          <p className="text-sm font-semibold text-[#00BF7B]">
+            Trusted Sourcing Partner
+          </p>
+        </div>
+      </Link>
+
+      <nav className="flex items-center">
+        <div className="flex space-x-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={cn(
+                "font-medium transition-colors hover:text-[#0E766E]",
+                location.pathname === link.path
+                  ? "text-[#0E766E]"
+                  : "text-[#0F5E59]"
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+        <Button asChild variant="call" className="ml-10">
+          <Link to="/contact">Call Us</Link>
+        </Button>
+      </nav>
+    </div>
+  );
+
+  return (
+    <header
+      className={cn(
+        "fixed w-full z-50 transition-all duration-300 bg-white",
+        scrolled ? "shadow-md" : "shadow-sm"
+      )}
+    >
+      <div className="container-custom">
+        {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
       </div>
     </header>
   );
