@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Clock, Eye } from "lucide-react";
@@ -11,11 +12,8 @@ const Hero = () => {
             <h1 className="hero-heading mb-6">
               Quality Pharmaceutical<br />Raw Materials & APIs
             </h1>
-            <p className="hero-subheading mx-auto mb-6">
+            <p className="hero-subheading mx-auto mb-8">
               Premium supplier of Pharmaceutical Raw materials, API, Excipients, Nutraceuticals,<br />Intermediates and Chemicals for all your pharmaceutical needs.
-            </p>
-            <p className="text-[#0F5E59] font-medium mb-8">
-              Featuring premium-quality Azythromycin and other essential APIs
             </p>
           </div>
           

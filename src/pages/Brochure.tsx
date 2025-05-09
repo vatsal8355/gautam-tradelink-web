@@ -1,8 +1,13 @@
+
 import { Helmet } from "react-helmet-async";
-import { FileText, Download } from "lucide-react";
+import { FileText, Download, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
 
 const Brochure = () => {
+  const [activeTab, setActiveTab] = useState("overview");
+  
   // Function to handle brochure download
   const downloadBrochure = () => {
     // Create a link to the PDF file in the public directory
@@ -29,13 +34,157 @@ const Brochure = () => {
     window.dispatchEvent(event);
   };
 
+  const productCategories = {
+    api: {
+      title: "Active Pharmaceutical Ingredients",
+      description: "High-quality active ingredients for pharmaceutical formulations",
+      products: [
+        "Aceclofenac",
+        "Amoxicillin",
+        "Amoxicillin Trihydrate",
+        "Atorvastatin Calcium",
+        "Azythromycin",
+        "Cefotaxime sodium sterile",
+        "Ceftriaxone Sodium",
+        "Ciprofloxacin",
+        "Diclofenac Sodium",
+        "Enrofloxacin",
+        "Ibuprofen",
+        "Levamisole HCL",
+        "Losartan Potassium",
+        "Metformin HCl",
+        "Montelukast sodium",
+        "Omeprazole",
+        "Rutin",
+        "Sertraline",
+        "Simvastatin",
+        "Sucralfate",
+        "Telmisartan",
+        "Tritinoin",
+        "Warfin"
+      ]
+    },
+    excipients: {
+      title: "Excipients",
+      description: "Essential inactive ingredients for pharmaceutical manufacturing",
+      products: [
+        "Aspartame",
+        "Benzalkonium chloride – Preservative",
+        "Butylated hydroxyanisole (BHA) – Antioxidant",
+        "Butylated hydroxytoluene (BHT) – Antioxidant",
+        "Calcium phosphate",
+        "Croscarmellose Sodium",
+        "Gelatin",
+        "Glycine",
+        "HPMC pthalate",
+        "Lactose",
+        "Lactose Monohydrate",
+        "Magnesium Stearate",
+        "Mannitol",
+        "Methylparaben – Preservative",
+        "Microcrystalline Cellulose",
+        "Potassium citrate",
+        "Povidone (PVP)",
+        "Propylparaben – Preservative",
+        "Sodium lauryl sulfate – Surfactant",
+        "Sodium Starch Glycolate",
+        "Sorbitol",
+        "Stearic Acid",
+        "Talc (Pharmacuetical Grade)"
+      ]
+    },
+    nutraceuticals: {
+      title: "Nutraceuticals",
+      description: "Natural ingredients with health benefits for nutritional supplements",
+      products: [
+        "Astaxanthin",
+        "Beta Carotene (Synthetic/Natural)",
+        "Beta-glucan",
+        "Coenzyme Q10",
+        "Curcumin",
+        "Dbiotin",
+        "Folic acid",
+        "Glucosamine sulfate",
+        "Green Tea Extract",
+        "Inositol",
+        "L-Carnitine",
+        "Lycopene",
+        "Lutein",
+        "Melatonin",
+        "Niacin (Vitamin B3)",
+        "Omega-3 Fatty Acids",
+        "Resveratrol",
+        "Riboflavin (Vitamin B2)",
+        "Selenium",
+        "Thiamine (Vitamin B1)",
+        "Vitamin A",
+        "Vitamin C (plain/coated)",
+        "Vitamin E"
+      ]
+    },
+    intermediates: {
+      title: "Intermediates & Chemicals",
+      description: "Specialized chemicals for pharmaceutical synthesis",
+      productPairs: [
+        { name: "1,2,4-Triazole", use: "Antifungal intermediate" },
+        { name: "1-Naphthylamine", use: "Used in analgesic synthesis" },
+        { name: "2,4-Dichlorobenzyl alcohol", use: "Used in throat lozenges" },
+        { name: "2,4-Dinitrophenol", use: "Historical intermediate for metabolic drugs" },
+        { name: "2,6-Dichloroaniline", use: "Used in antihistamines" },
+        { name: "2-Amino-5-methylthiazole", use: "Intermediate in antibiotic synthesis" },
+        { name: "2-Chlorobenzyl chloride", use: "Used in antihistamines" },
+        { name: "2-Methylimidazole", use: "Intermediate in anti-ulcer drugs" },
+        { name: "3,4-Dihydroxybenzaldehyde", use: "Dopamine-related drug intermediate" },
+        { name: "3-Nitrobenzaldehyde", use: "Intermediate for cardiovascular drugs" },
+        { name: "4-Aminosalicylic acid", use: "Anti-TB drug intermediate" },
+        { name: "4-Hydroxycoumarin", use: "Intermediate in anticoagulants like warfarin" },
+        { name: "4-Isobutylacetophenone", use: "Ibuprofen intermediate" },
+        { name: "Acetyl chloride", use: "Acylating agent in various APIs" },
+        { name: "Aniline", use: "Intermediate for sulfa drugs" },
+        { name: "Benzimidazole", use: "Key structure in antiparasitic drugs" },
+        { name: "Benzyl chloride", use: "Used in antihistamine synthesis" },
+        { name: "Benzylamine", use: "Used in cardiovascular agents" },
+        { name: "Chlorhexidine base", use: "Intermediate for antiseptics" },
+        { name: "Chloroacetyl chloride", use: "Used in anti-inflammatory synthesis" },
+        { name: "Chlorobenzene", use: "Used in muscle relaxants" },
+        { name: "Cyclohexylamine", use: "Used in synthesis of stimulants" },
+        { name: "Diethyl malonate", use: "Used in barbiturate synthesis" },
+        { name: "Dimethylamine", use: "Used in antihistamines and CNS drugs" },
+        { name: "Epichlorohydrin", use: "Intermediate for beta blockers" },
+        { name: "Ethyl acetoacetate", use: "Building block in drug synthesis" },
+        { name: "Formic acid", use: "Used in reduction and API modification" },
+        { name: "Hydrazine hydrate", use: "Used in anti-TB and cancer drugs" },
+        { name: "Imidazole", use: "Core of antifungals like ketoconazole" },
+        { name: "Isatin", use: "Intermediate in antidepressants" },
+        { name: "Isobutylbenzene", use: "Precursor to ibuprofen" },
+        { name: "Lactic acid", use: "Used in synthesis of lactate salts" },
+        { name: "Methyl iodide", use: "Methylating agent in many syntheses" },
+        { name: "Methylamine", use: "Basic amine used in antidepressants" },
+        { name: "N-Methylpiperazine", use: "Used in cardiovascular agents" },
+        { name: "N-Phenylpiperazine", use: "Intermediate in antipsychotics" },
+        { name: "Naphthol", use: "Intermediate for anti-inflammatory drugs" },
+        { name: "P-aminophenol", use: "Intermediate for paracetamol" },
+        { name: "Phenol", use: "Starting material for antiseptics" },
+        { name: "Phenylacetic acid", use: "Intermediate for penicillin derivatives" },
+        { name: "Phthalic anhydride", use: "Used in antiepileptics" },
+        { name: "Piperazine", use: "Base for many anthelmintics and antipsychotics" },
+        { name: "Piperidine", use: "Core structure in many antihistamines" },
+        { name: "Succinic acid", use: "Intermediate for some anesthetics" },
+        { name: "Thiazole", use: "Found in anti-infective drugs" },
+        { name: "Thionyl chloride", use: "Chlorinating agent" },
+        { name: "Toluene diisocyanate", use: "Intermediate in some corticosteroids" },
+        { name: "Trichloroacetic acid", use: "Used in protein precipitation, API synthesis" }
+      ]
+    }
+  };
+
   return (
     <>
       <Helmet>
-        <title>Download Brochure | Gautam Tradelink</title>
+        <title>Product Brochure | Gautam Tradelink</title>
         <meta
           name="description"
-          content="Download our product brochure to learn more about Gautam Tradelink's pharmaceutical raw materials and services."
+          content="Download our comprehensive product brochure to learn more about Gautam Tradelink's pharmaceutical raw materials and services."
         />
       </Helmet>
 
@@ -44,9 +193,9 @@ const Brochure = () => {
         <section className="pt-32 pb-16 bg-primary">
           <div className="container-custom">
             <div className="max-w-3xl text-white">
-              <h1 className="heading-xl mb-6">Download Our Brochure</h1>
+              <h1 className="heading-xl mb-6">Company Brochure</h1>
               <p className="text-lg opacity-90">
-                Access detailed information about our products and services.
+                Access detailed information about our company and our extensive product range.
               </p>
             </div>
           </div>
@@ -55,78 +204,317 @@ const Brochure = () => {
         {/* Brochure Section */}
         <section className="section-padding">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                <div className="grid md:grid-cols-5">
-                  {/* Left Side - Preview */}
-                  <div className="md:col-span-2 bg-muted p-8 flex flex-col items-center justify-center">
-                    <div className="w-48 h-64 bg-primary/5 border border-primary/20 rounded-md flex items-center justify-center mb-4">
-                      <FileText className="h-16 w-16 text-primary opacity-60" />
+            <div className="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+              <div className="grid md:grid-cols-3">
+                {/* Left Side - Preview */}
+                <div className="md:col-span-1 bg-muted p-8 flex flex-col items-center justify-center">
+                  <div className="w-48 h-64 bg-primary/5 border border-primary/20 rounded-md flex items-center justify-center mb-4 relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <img 
+                        src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png" 
+                        alt="Gautam Tradelink Logo" 
+                        className="max-w-full max-h-full object-contain" 
+                      />
                     </div>
-                    <h3 className="font-semibold text-center text-lg">
-                      Gautam Tradelink
-                      <br />
+                    <div className="absolute bottom-0 left-0 right-0 bg-primary/80 text-white text-xs py-1 px-2 text-center">
                       Product Brochure
-                    </h3>
+                    </div>
                   </div>
+                  <h3 className="font-semibold text-center text-lg">
+                    Gautam Tradelink
+                    <br />
+                    Product Brochure
+                  </h3>
+
+                  <Button 
+                    onClick={downloadBrochure} 
+                    className="mt-6"
+                    size="sm"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
+                  </Button>
+                </div>
+                
+                {/* Right Side - Content */}
+                <div className="md:col-span-2 p-8">
+                  <h2 className="heading-md mb-4">Company & Product Overview</h2>
                   
-                  {/* Right Side - Content */}
-                  <div className="md:col-span-3 p-8">
-                    <h2 className="heading-md mb-4">Company & Product Brochure</h2>
-                    
-                    <p className="text-muted-foreground mb-6">
-                      Our comprehensive brochure provides detailed information about 
-                      Gautam Tradelink and our extensive product catalog. Download 
-                      it to learn more about:
-                    </p>
-                    
-                    <ul className="space-y-3 mb-8">
-                      <li className="flex items-start space-x-3">
-                        <span className="text-primary">•</span>
-                        <span>Complete product listings with specifications</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <span className="text-primary">•</span>
-                        <span>Quality standards and certifications</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <span className="text-primary">•</span>
-                        <span>Company overview and capabilities</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <span className="text-primary">•</span>
-                        <span>Ordering and delivery information</span>
-                      </li>
-                    </ul>
-                    
-                    <Button 
-                      onClick={downloadBrochure} 
-                      size="lg"
-                      className="w-full md:w-auto"
-                    >
+                  <p className="text-muted-foreground mb-6">
+                    Our comprehensive brochure provides detailed information about 
+                    Gautam Tradelink and our extensive product catalog. Explore our 
+                    products and services below or download the complete brochure.
+                  </p>
+
+                  <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+                    <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
+                      <TabsTrigger value="overview">Overview</TabsTrigger>
+                      <TabsTrigger value="products">Products</TabsTrigger>
+                      <TabsTrigger value="quality">Quality</TabsTrigger>
+                      <TabsTrigger value="contact">Contact</TabsTrigger>
+                    </TabsList>
+
+                    <TabsContent value="overview" className="space-y-4">
+                      <h3 className="text-xl font-semibold">Company Profile</h3>
+                      <p>
+                        Gautam Tradelink is a premium supplier of pharmaceutical raw materials, 
+                        specializing in Active Pharmaceutical Ingredients (APIs), Excipients, 
+                        Nutraceuticals, and Chemical Intermediates. We serve pharmaceutical 
+                        manufacturers worldwide with high-quality ingredients that meet international standards.
+                      </p>
+
+                      <div className="mt-6 space-y-3">
+                        <h4 className="text-lg font-medium">Our Mission</h4>
+                        <p className="text-muted-foreground">
+                          To be a trusted and reliable sourcing partner for the pharmaceutical industry 
+                          by providing high-quality raw materials and excellent customer service.
+                        </p>
+
+                        <h4 className="text-lg font-medium">Our Vision</h4>
+                        <p className="text-muted-foreground">
+                          To become the preferred supplier of pharmaceutical raw materials globally, 
+                          known for quality, reliability, and customer satisfaction.
+                        </p>
+                      </div>
+
+                      <div className="mt-6">
+                        <h4 className="text-lg font-medium">Why Choose Us?</h4>
+                        <ul className="mt-3 space-y-2 list-disc pl-5 text-muted-foreground">
+                          <li>Extensive product range covering all major pharmaceutical categories</li>
+                          <li>All products sourced from approved manufacturers with quality systems</li>
+                          <li>Products meet IP, BP, and USP standards</li>
+                          <li>Complete documentation with every order</li>
+                          <li>Competitive pricing and flexible terms</li>
+                          <li>Responsive customer service</li>
+                        </ul>
+                      </div>
+                    </TabsContent>
+
+                    <TabsContent value="products">
+                      <div className="space-y-8">
+                        <h3 className="text-xl font-semibold">Our Product Categories</h3>
+                        <p className="text-muted-foreground">
+                          We offer a comprehensive range of products across four main categories. 
+                          Below is a selection of our most popular products in each category.
+                        </p>
+
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="text-lg font-medium text-primary">{productCategories.api.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{productCategories.api.description}</p>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                              {productCategories.api.products.slice(0, 9).map((product, index) => (
+                                <div key={index} className="text-sm p-2 bg-muted/50 rounded">{product}</div>
+                              ))}
+                            </div>
+                            {productCategories.api.products.length > 9 && (
+                              <p className="text-xs text-muted-foreground mt-2">
+                                +{productCategories.api.products.length - 9} more products available
+                              </p>
+                            )}
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-medium text-primary">{productCategories.excipients.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{productCategories.excipients.description}</p>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                              {productCategories.excipients.products.slice(0, 9).map((product, index) => (
+                                <div key={index} className="text-sm p-2 bg-muted/50 rounded">{product}</div>
+                              ))}
+                            </div>
+                            {productCategories.excipients.products.length > 9 && (
+                              <p className="text-xs text-muted-foreground mt-2">
+                                +{productCategories.excipients.products.length - 9} more products available
+                              </p>
+                            )}
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-medium text-primary">{productCategories.nutraceuticals.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{productCategories.nutraceuticals.description}</p>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                              {productCategories.nutraceuticals.products.slice(0, 9).map((product, index) => (
+                                <div key={index} className="text-sm p-2 bg-muted/50 rounded">{product}</div>
+                              ))}
+                            </div>
+                            {productCategories.nutraceuticals.products.length > 9 && (
+                              <p className="text-xs text-muted-foreground mt-2">
+                                +{productCategories.nutraceuticals.products.length - 9} more products available
+                              </p>
+                            )}
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-medium text-primary">{productCategories.intermediates.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{productCategories.intermediates.description}</p>
+                            <div className="grid grid-cols-1 gap-2">
+                              {productCategories.intermediates.productPairs.slice(0, 5).map((pair, index) => (
+                                <div key={index} className="text-sm p-2 bg-muted/50 rounded flex justify-between">
+                                  <span className="font-medium">{pair.name}</span>
+                                  <span className="text-xs text-muted-foreground">{pair.use}</span>
+                                </div>
+                              ))}
+                            </div>
+                            {productCategories.intermediates.productPairs.length > 5 && (
+                              <p className="text-xs text-muted-foreground mt-2">
+                                +{productCategories.intermediates.productPairs.length - 5} more products available
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        <p className="text-center text-muted-foreground italic text-sm">
+                          This is just a selection of our most popular products.
+                          Contact us for our full product catalog and specific requirements.
+                        </p>
+                      </div>
+                    </TabsContent>
+
+                    <TabsContent value="quality" className="space-y-4">
+                      <h3 className="text-xl font-semibold">Quality Assurance</h3>
+                      <p>
+                        At Gautam Tradelink, quality is our highest priority. All products we supply 
+                        undergo rigorous testing and quality control measures to ensure they meet 
+                        international standards including IP, BP, and USP specifications.
+                      </p>
+
+                      <div className="mt-6 space-y-4">
+                        <div>
+                          <h4 className="text-lg font-medium">Certification & Documentation</h4>
+                          <p className="text-muted-foreground">
+                            All our products are supplied with complete documentation including:
+                          </p>
+                          <ul className="mt-2 space-y-1 list-disc pl-5 text-muted-foreground">
+                            <li>Certificate of Analysis (COA)</li>
+                            <li>Material Safety Data Sheet (MSDS)</li>
+                            <li>Certificate of Origin where applicable</li>
+                            <li>Stability data when required</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-lg font-medium">Sourcing Standards</h4>
+                          <p className="text-muted-foreground">
+                            We source our products exclusively from manufacturers who:
+                          </p>
+                          <ul className="mt-2 space-y-1 list-disc pl-5 text-muted-foreground">
+                            <li>Maintain strict quality control systems</li>
+                            <li>Follow Good Manufacturing Practices (GMP)</li>
+                            <li>Undergo regular audits</li>
+                            <li>Have necessary certifications for their operations</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="text-lg font-medium">Quality Control Process</h4>
+                          <p className="text-muted-foreground">
+                            Our quality control process includes:
+                          </p>
+                          <ul className="mt-2 space-y-1 list-disc pl-5 text-muted-foreground">
+                            <li>Verification of all incoming materials</li>
+                            <li>Testing against pharmacopoeial standards</li>
+                            <li>Ensuring batch-to-batch consistency</li>
+                            <li>Proper storage and handling conditions</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </TabsContent>
+
+                    <TabsContent value="contact" className="space-y-4">
+                      <h3 className="text-xl font-semibold">Contact Information</h3>
+                      <p className="text-muted-foreground">
+                        We're here to answer your questions and help you find the right products 
+                        for your needs. Get in touch with our team using the contact details below.
+                      </p>
+
+                      <div className="mt-6 space-y-6">
+                        <div className="flex items-start space-x-3">
+                          <div className="p-2 bg-primary/10 rounded-full mt-1">
+                            <Phone className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-medium">Phone</h4>
+                            <p className="text-muted-foreground">Vatsalbhai Shah: +91 9867041134</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <div className="p-2 bg-primary/10 rounded-full mt-1">
+                            <Mail className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-medium">Email</h4>
+                            <p className="text-muted-foreground">Gautamtradelink@hotmail.com</p>
+                            <p className="text-muted-foreground">Marketing.gautamtradelink@hotmail.com</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <div className="p-2 bg-primary/10 rounded-full mt-1">
+                            <MapPin className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-medium">Office Address</h4>
+                            <p className="text-muted-foreground">
+                              901, Deepak Residency, Bhogilal Fadia Road,
+                              <br />
+                              Kandivali (west), Mumbai - 400067
+                            </p>
+                            <p className="text-sm mt-1">
+                              <a 
+                                href="https://maps.app.goo.gl/GZNrfEuecCwjwu9E7?g_st=iw" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary/80"
+                              >
+                                View on Google Maps →
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="pt-4 border-t">
+                          <h4 className="text-lg font-medium">Business Hours</h4>
+                          <div className="mt-2 space-y-1">
+                            <div className="flex justify-between">
+                              <span className="text-muted-foreground">Monday - Saturday:</span>
+                              <span>10:00 AM - 6:30 PM</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-muted-foreground">Sunday:</span>
+                              <span>Closed</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                  
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <Button onClick={downloadBrochure}>
                       <Download className="mr-2 h-4 w-4" />
-                      Download Brochure (PDF)
+                      Download Full Brochure (PDF)
+                    </Button>
+                    
+                    <Button variant="outline" asChild>
+                      <a href="/contact">Contact Us</a>
                     </Button>
                   </div>
                 </div>
               </div>
-              
-              <div className="mt-12 bg-primary/5 rounded-xl p-6">
-                <h3 className="font-semibold mb-4">Need More Information?</h3>
-                <p className="text-muted-foreground mb-4">
-                  If you have specific questions or need detailed information about particular 
-                  products that may not be covered in our brochure, please don't hesitate to 
-                  contact us directly.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="/contact" className="btn-primary">
-                    Contact Us
-                  </a>
-                  <a href="tel:+919867041134" className="btn-outline">
-                    Call Us
-                  </a>
-                </div>
-              </div>
+            </div>
+            
+            <div className="bg-muted p-6 rounded-lg">
+              <h3 className="font-semibold mb-4">Custom Requirements?</h3>
+              <p className="text-muted-foreground mb-4">
+                If you're looking for specific products that may not be listed in our brochure, 
+                or have custom requirements, please get in touch with our team. We work with an 
+                extensive network of manufacturers and can source a wide range of pharmaceutical 
+                raw materials to meet your needs.
+              </p>
+              <a href="/contact" className="btn-primary inline-flex">
+                Submit Inquiry
+              </a>
             </div>
           </div>
         </section>

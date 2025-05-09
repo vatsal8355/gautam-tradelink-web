@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { z } from "zod";
@@ -46,18 +47,39 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log("Form submitted with data:", data);
-    
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We will get back to you shortly.",
-    });
-    
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      // Create the email content
+      const emailContent = `
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone}
+        Company: ${data.company}
+        Product Interest: ${data.product}
+        Message: ${data.message}
+      `;
+      
+      // Create a mailto link with the form data
+      const mailtoLink = `mailto:Gautamtradelink@hotmail.com?subject=Contact Form Submission from ${data.name}&body=${encodeURIComponent(emailContent)}`;
+      
+      // Open the email client
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Message Ready to Send",
+        description: "Your email client has been opened with the message. Please send the email to complete your inquiry.",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: "There was an error processing your request. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      // Reset the form and submitting state
+      form.reset();
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -137,11 +159,19 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-medium mb-1">Office Address</h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground mb-2">
                           901, Deepak Residency, Bhogilal Fadia Road,
                           <br />
                           Kandivali (west), Mumbai - 400067
                         </p>
+                        <a 
+                          href="https://maps.app.goo.gl/GZNrfEuecCwjwu9E7?g_st=iw" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary/80 text-sm font-medium"
+                        >
+                          View on Google Maps →
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -288,7 +318,7 @@ const Contact = () => {
             <h2 className="text-2xl font-semibold mb-8 text-center">Our Location</h2>
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60280.89151811806!2d72.8107553779302!3d19.206800028406074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d4c5fd1e2d%3A0xe9bd2694128fe5a0!2sKandivali%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.665605120524!2d72.84862547611711!3d19.169460948693778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d4c5fd1e2d%3A0xe9bd2694128fe5a0!2sKandivali%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
