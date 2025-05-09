@@ -91,6 +91,11 @@ const ProductCategories = () => {
             </div>
           ))}
         </div>
+        
+        <div className="mt-8 text-center text-muted-foreground italic">
+          <p>This is just a selection of our most popular products. 
+          Contact us for our full product catalog and specific requirements.</p>
+        </div>
       </div>
     </section>
   );

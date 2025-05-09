@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
@@ -51,18 +52,10 @@ const Navbar = () => {
         {/* Logo and company name */}
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
+            src="/lovable-uploads/aebd52d7-c7d1-479a-b3d3-cbe392c2d65a.png"
             alt="Gautam Tradelink Logo"
-            className="h-8 w-8 rounded-full bg-[#0F5E59] p-1"
+            className="h-8 w-auto"
           />
-          <div className="flex flex-col">
-            <h1 className="text-lg font-bold text-[#0F5E59] leading-tight">
-              Gautam Tradelink
-            </h1>
-            <p className="text-xs font-semibold text-[#00BF7B]">
-              Trusted Sourcing Partner
-            </p>
-          </div>
         </Link>
 
         {/* Hamburger Menu Button */}
@@ -116,18 +109,10 @@ const Navbar = () => {
     <div className="flex items-center justify-between py-3">
       <Link to="/" className="flex items-center space-x-3">
         <img
-          src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png"
+          src="/lovable-uploads/aebd52d7-c7d1-479a-b3d3-cbe392c2d65a.png"
           alt="Gautam Tradelink Logo"
-          className="h-12 w-12 rounded-full bg-[#0F5E59] p-1"
+          className="h-12 w-auto"
         />
-        <div className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-[#0F5E59]">
-            Gautam Tradelink
-          </h1>
-          <p className="text-sm font-semibold text-[#00BF7B]">
-            Trusted Sourcing Partner
-          </p>
-        </div>
       </Link>
 
       <nav className="flex items-center">

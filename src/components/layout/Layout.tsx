@@ -19,6 +19,7 @@ const Layout = () => {
       <Helmet>
         <title>Gautam Tradelink - Trusted Sourcing Partner</title>
         <meta name="description" content="Your trusted sourcing partner for pharmaceutical API and raw materials." />
+        <link rel="icon" href="/lovable-uploads/aebd52d7-c7d1-479a-b3d3-cbe392c2d65a.png" type="image/png" />
       </Helmet>
       <Navbar />
       <Outlet />
