@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -115,55 +116,55 @@ const Products = () => {
       title: "Intermediates & Chemicals",
       description: "Specialized chemicals for pharmaceutical synthesis",
       icon: Package,
-      products: [
-        "P-aminophenol – Intermediate for paracetamol",
-        "2,4-Dichlorobenzyl alcohol – Used in throat lozenges",
-        "Benzyl chloride – Used in antihistamine synthesis",
-        "Phenylacetic acid – Intermediate for penicillin derivatives",
-        "Chlorhexidine base – Intermediate for antiseptics",
-        "4-Hydroxycoumarin – Intermediate in anticoagulants like warfarin",
-        "Isobutylbenzene – Precursor to ibuprofen",
-        "4-Isobutylacetophenone – Ibuprofen intermediate",
-        "4-Aminosalicylic acid – Anti-TB drug intermediate",
-        "Epichlorohydrin – Intermediate for beta blockers",
-        "Lactic acid – Used in synthesis of lactate salts",
-        "Succinic acid – Intermediate for some anesthetics",
-        "2-Chlorobenzyl chloride – Used in antihistamines",
-        "Diethyl malonate – Used in barbiturate synthesis",
-        "Ethyl acetoacetate – Building block in drug synthesis",
-        "Acetyl chloride – Acylating agent in various APIs",
-        "Methylamine – Basic amine used in antidepressants",
-        "Dimethylamine – Used in antihistamines and CNS drugs",
-        "Chloroacetyl chloride – Used in anti-inflammatory synthesis",
-        "Hydrazine hydrate – Used in anti-TB and cancer drugs",
-        "Phenol – Starting material for antiseptics",
-        "Aniline – Intermediate for sulfa drugs",
-        "2-Amino-5-methylthiazole – Intermediate in antibiotic synthesis",
-        "3,4-Dihydroxybenzaldehyde – Dopamine-related drug intermediate",
-        "3-Nitrobenzaldehyde – Intermediate for cardiovascular drugs",
-        "2,6-Dichloroaniline – Used in antihistamines",
-        "Toluene diisocyanate – Intermediate in some corticosteroids",
-        "1,2,4-Triazole – Antifungal intermediate",
-        "Piperazine – Base for many anthelmintics and antipsychotics",
-        "Piperidine – Core structure in many antihistamines",
-        "N-Methylpiperazine – Used in cardiovascular agents",
-        "Benzimidazole – Key structure in antiparasitic drugs",
-        "Naphthol – Intermediate for anti-inflammatory drugs",
-        "1-Naphthylamine – Used in analgesic synthesis",
-        "Thiazole – Found in anti-infective drugs",
-        "Imidazole – Core of antifungals like ketoconazole",
-        "Chlorobenzene – Used in muscle relaxants",
-        "Isatin – Intermediate in antidepressants",
-        "Phthalic anhydride – Used in antiepileptics",
-        "N-Phenylpiperazine – Intermediate in antipsychotics",
-        "2,4-Dinitrophenol – Historical intermediate for metabolic drugs",
-        "Methyl iodide – Methylating agent in many syntheses",
-        "Formic acid – Used in reduction and API modification",
-        "Thionyl chloride – Chlorinating agent",
-        "Trichloroacetic acid – Used in protein precipitation, API synthesis",
-        "2-Methylimidazole – Intermediate in anti-ulcer drugs",
-        "Benzylamine – Used in cardiovascular agents",
-        "Cyclohexylamine – Used in synthesis of stimulants"
+      productPairs: [
+        { name: "P-aminophenol", use: "Intermediate for paracetamol" },
+        { name: "2,4-Dichlorobenzyl alcohol", use: "Used in throat lozenges" },
+        { name: "Benzyl chloride", use: "Used in antihistamine synthesis" },
+        { name: "Phenylacetic acid", use: "Intermediate for penicillin derivatives" },
+        { name: "Chlorhexidine base", use: "Intermediate for antiseptics" },
+        { name: "4-Hydroxycoumarin", use: "Intermediate in anticoagulants like warfarin" },
+        { name: "Isobutylbenzene", use: "Precursor to ibuprofen" },
+        { name: "4-Isobutylacetophenone", use: "Ibuprofen intermediate" },
+        { name: "4-Aminosalicylic acid", use: "Anti-TB drug intermediate" },
+        { name: "Epichlorohydrin", use: "Intermediate for beta blockers" },
+        { name: "Lactic acid", use: "Used in synthesis of lactate salts" },
+        { name: "Succinic acid", use: "Intermediate for some anesthetics" },
+        { name: "2-Chlorobenzyl chloride", use: "Used in antihistamines" },
+        { name: "Diethyl malonate", use: "Used in barbiturate synthesis" },
+        { name: "Ethyl acetoacetate", use: "Building block in drug synthesis" },
+        { name: "Acetyl chloride", use: "Acylating agent in various APIs" },
+        { name: "Methylamine", use: "Basic amine used in antidepressants" },
+        { name: "Dimethylamine", use: "Used in antihistamines and CNS drugs" },
+        { name: "Chloroacetyl chloride", use: "Used in anti-inflammatory synthesis" },
+        { name: "Hydrazine hydrate", use: "Used in anti-TB and cancer drugs" },
+        { name: "Phenol", use: "Starting material for antiseptics" },
+        { name: "Aniline", use: "Intermediate for sulfa drugs" },
+        { name: "2-Amino-5-methylthiazole", use: "Intermediate in antibiotic synthesis" },
+        { name: "3,4-Dihydroxybenzaldehyde", use: "Dopamine-related drug intermediate" },
+        { name: "3-Nitrobenzaldehyde", use: "Intermediate for cardiovascular drugs" },
+        { name: "2,6-Dichloroaniline", use: "Used in antihistamines" },
+        { name: "Toluene diisocyanate", use: "Intermediate in some corticosteroids" },
+        { name: "1,2,4-Triazole", use: "Antifungal intermediate" },
+        { name: "Piperazine", use: "Base for many anthelmintics and antipsychotics" },
+        { name: "Piperidine", use: "Core structure in many antihistamines" },
+        { name: "N-Methylpiperazine", use: "Used in cardiovascular agents" },
+        { name: "Benzimidazole", use: "Key structure in antiparasitic drugs" },
+        { name: "Naphthol", use: "Intermediate for anti-inflammatory drugs" },
+        { name: "1-Naphthylamine", use: "Used in analgesic synthesis" },
+        { name: "Thiazole", use: "Found in anti-infective drugs" },
+        { name: "Imidazole", use: "Core of antifungals like ketoconazole" },
+        { name: "Chlorobenzene", use: "Used in muscle relaxants" },
+        { name: "Isatin", use: "Intermediate in antidepressants" },
+        { name: "Phthalic anhydride", use: "Used in antiepileptics" },
+        { name: "N-Phenylpiperazine", use: "Intermediate in antipsychotics" },
+        { name: "2,4-Dinitrophenol", use: "Historical intermediate for metabolic drugs" },
+        { name: "Methyl iodide", use: "Methylating agent in many syntheses" },
+        { name: "Formic acid", use: "Used in reduction and API modification" },
+        { name: "Thionyl chloride", use: "Chlorinating agent" },
+        { name: "Trichloroacetic acid", use: "Used in protein precipitation, API synthesis" },
+        { name: "2-Methylimidazole", use: "Intermediate in anti-ulcer drugs" },
+        { name: "Benzylamine", use: "Used in cardiovascular agents" },
+        { name: "Cyclohexylamine", use: "Used in synthesis of stimulants" }
       ]
     }
   };
@@ -243,65 +244,95 @@ const Products = () => {
                 </TabsTrigger>
               </TabsList>
 
-              {Object.keys(categoryInfo).map((category) => (
-                <TabsContent key={category} value={category} className="space-y-8 pt-[2.5rem] sm:pt-0">
-                  <div className="bg-muted p-6 rounded-lg">
-                    <div className="flex md:items-start md:space-x-4">
-                      <div className="hidden md:block p-3 bg-white rounded-full mt-1">
-                        {(() => {
-                          const IconComponent = categoryInfo[category as keyof typeof categoryInfo].icon;
-                          return <IconComponent className="h-5 w-5 text-primary" />;
-                        })()}
-                      </div>
-                      
-                      {/* Mobile only version */}
-                      <div className="md:hidden flex flex-col items-center text-center w-full mb-4">
-                        <div className="p-3 bg-white rounded-full mb-3">
+              {Object.keys(categoryInfo).map((category) => {
+                const categoryData = categoryInfo[category as keyof typeof categoryInfo];
+                const isIntermediates = category === "intermediates";
+                
+                return (
+                  <TabsContent key={category} value={category} className="space-y-8 pt-[2.5rem] sm:pt-0">
+                    <div className="bg-muted p-6 rounded-lg">
+                      <div className="flex md:items-start md:space-x-4">
+                        <div className="hidden md:block p-3 bg-white rounded-full mt-1">
                           {(() => {
-                            const IconComponent = categoryInfo[category as keyof typeof categoryInfo].icon;
+                            const IconComponent = categoryData.icon;
                             return <IconComponent className="h-5 w-5 text-primary" />;
                           })()}
                         </div>
-                        <h2 className="text-xl font-semibold mb-2">
-                          {categoryInfo[category as keyof typeof categoryInfo].title}
-                        </h2>
-                        <p className="text-muted-foreground">
-                          {categoryInfo[category as keyof typeof categoryInfo].description}
-                        </p>
-                      </div>
-                      
-                      {/* Desktop only version */}
-                      <div className="hidden md:block">
-                        <h2 className="text-xl font-semibold mb-2">
-                          {categoryInfo[category as keyof typeof categoryInfo].title}
-                        </h2>
-                        <p className="text-muted-foreground">
-                          {categoryInfo[category as keyof typeof categoryInfo].description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-lg border border-border">
-                    <h3 className="text-lg font-medium mb-4">Our Products</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                      {categoryInfo[category as keyof typeof categoryInfo].products.map((product, index) => (
-                        <div key={index} className="p-3 bg-muted rounded-md text-center">
-                          <span className="font-medium text-[#0F5E59]">{product}</span>
+                        
+                        {/* Mobile only version */}
+                        <div className="md:hidden flex flex-col items-center text-center w-full mb-4">
+                          <div className="p-3 bg-white rounded-full mb-3">
+                            {(() => {
+                              const IconComponent = categoryData.icon;
+                              return <IconComponent className="h-5 w-5 text-primary" />;
+                            })()}
+                          </div>
+                          <h2 className="text-xl font-semibold mb-2">
+                            {categoryData.title}
+                          </h2>
+                          <p className="text-muted-foreground">
+                            {categoryData.description}
+                          </p>
                         </div>
-                      ))}
+                        
+                        {/* Desktop only version */}
+                        <div className="hidden md:block">
+                          <h2 className="text-xl font-semibold mb-2">
+                            {categoryData.title}
+                          </h2>
+                          <p className="text-muted-foreground">
+                            {categoryData.description}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex flex-wrap justify-center gap-4 mt-8">
-                      <a href="/contact" className="btn-primary inline-flex">
-                        Contact Us
-                      </a>
-                      <a href="/brochure" className="btn-outline inline-flex">
-                        Download Brochure
-                      </a>
+
+                    <div className="bg-white p-6 rounded-lg border border-border">
+                      <h3 className="text-lg font-medium mb-4">Our Products</h3>
+                      
+                      {isIntermediates ? (
+                        // Special layout for intermediates with name-use pairs
+                        <div className="overflow-x-auto">
+                          <table className="w-full border-collapse mb-6">
+                            <thead className="bg-muted">
+                              <tr>
+                                <th className="text-left p-3 font-medium">Chemical Name</th>
+                                <th className="text-left p-3 font-medium">Application/Use</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {categoryInfo.intermediates.productPairs.map((pair, index) => (
+                                <tr key={index} className={index % 2 === 0 ? "bg-muted/40" : ""}>
+                                  <td className="p-3 font-medium text-[#0F5E59]">{pair.name}</td>
+                                  <td className="p-3">{pair.use}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        // Original grid layout for other categories
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                          {categoryData.products.map((product, index) => (
+                            <div key={index} className="p-3 bg-muted rounded-md text-center">
+                              <span className="font-medium text-[#0F5E59]">{product}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      
+                      <div className="flex flex-wrap justify-center gap-4 mt-8">
+                        <a href="/contact" className="btn-primary inline-flex">
+                          Contact Us
+                        </a>
+                        <a href="/brochure" className="btn-outline inline-flex">
+                          Download Brochure
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </TabsContent>
-              ))}
+                  </TabsContent>
+                );
+              })}
             </Tabs>
           </div>
         </section>
