@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import CategoryDescription from "./CategoryDescription";
 import ProductGrid from "./ProductGrid";
 import ProductTable from "./ProductTable";
@@ -44,12 +45,12 @@ const ProductDisplay = ({ category, categoryData }: ProductDisplayProps) => {
         </div>
         
         <div className="flex flex-wrap justify-center gap-4 mt-8">
-          <a href="/contact" className="btn-primary inline-flex">
+          <Link to="/contact" className="btn-primary inline-flex">
             Contact Us
-          </a>
-          <a href="/brochure" className="btn-outline inline-flex">
+          </Link>
+          <Link to="/brochure" className="btn-outline inline-flex">
             Download Brochure
-          </a>
+          </Link>
         </div>
       </div>
     </div>

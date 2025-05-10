@@ -52,9 +52,9 @@ const Navbar = () => {
         {/* Logo and company name */}
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/lovable-uploads/aebd52d7-c7d1-479a-b3d3-cbe392c2d65a.png"
+            src="/lovable-uploads/fc557fc8-41e3-4536-b0a1-feb7c4146f70.png"
             alt="Gautam Tradelink Logo"
-            className="h-8 w-auto"
+            className="h-10 w-auto"
           />
         </Link>
 
@@ -107,11 +107,11 @@ const Navbar = () => {
   // Desktop Navbar Component
   const DesktopNavbar = () => (
     <div className="flex items-center justify-between py-3">
-      <Link to="/" className="flex items-center space-x-3">
+      <Link to="/" className="flex items-center">
         <img
-          src="/lovable-uploads/aebd52d7-c7d1-479a-b3d3-cbe392c2d65a.png"
+          src="/lovable-uploads/fc557fc8-41e3-4536-b0a1-feb7c4146f70.png"
           alt="Gautam Tradelink Logo"
-          className="h-12 w-auto"
+          className="h-16 w-auto"
         />
       </Link>
 

@@ -1,9 +1,10 @@
-
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { FileText, Download, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
 
 const Brochure = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -24,14 +25,15 @@ const Brochure = () => {
     document.body.removeChild(link);
     
     // Show toast notification
-    const event = new CustomEvent("toast", {
-      detail: {
-        title: "Download Started",
-        description: "Your brochure download has started.",
-        type: "success"
-      }
+    toast({
+      title: "Download Started",
+      description: "Your brochure download has started.",
     });
-    window.dispatchEvent(event);
+  };
+
+  // Function to handle inquiry submission
+  const submitInquiry = () => {
+    window.location.href = "/contact";
   };
 
   const productCategories = {
@@ -211,7 +213,7 @@ const Brochure = () => {
                   <div className="w-48 h-64 bg-primary/5 border border-primary/20 rounded-md flex items-center justify-center mb-4 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center p-4">
                       <img 
-                        src="/lovable-uploads/0631f6cd-096b-4291-a6bc-01899124a80a.png" 
+                        src="/lovable-uploads/fc557fc8-41e3-4536-b0a1-feb7c4146f70.png" 
                         alt="Gautam Tradelink Logo" 
                         className="max-w-full max-h-full object-contain" 
                       />
@@ -497,7 +499,7 @@ const Brochure = () => {
                     </Button>
                     
                     <Button variant="outline" asChild>
-                      <a href="/contact">Contact Us</a>
+                      <Link to="/contact">Contact Us</Link>
                     </Button>
                   </div>
                 </div>
@@ -512,9 +514,9 @@ const Brochure = () => {
                 extensive network of manufacturers and can source a wide range of pharmaceutical 
                 raw materials to meet your needs.
               </p>
-              <a href="/contact" className="btn-primary inline-flex">
+              <Link to="/contact" className="btn-primary inline-flex">
                 Submit Inquiry
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -318,7 +319,7 @@ const Contact = () => {
             <h2 className="text-2xl font-semibold mb-8 text-center">Our Location</h2>
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.665605120524!2d72.84862547611711!3d19.169460948693778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d4c5fd1e2d%3A0xe9bd2694128fe5a0!2sKandivali%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.665605120524!2d72.84862547611711!3d19.169460948693778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d4c5fd1e2d%3A0xe9bd2694128fe5a0!2sDeepak%20Residency%2C%20Bhogilal%20Fadia%20Rd%2C%20Kandivali%20West%2C%20Mumbai%2C%20Maharashtra%20400067!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
