@@ -30,8 +30,10 @@ const Products = () => {
       products: [
         "Acetaminophen",
         "Aceclofenac",
+        "Amoxicillin Trihydrate",
         "Atorvastatin Calcium",
         "Azythromycin",
+        "Ceftriaxone Sodium",
         "Ciprofloxacin",
         "Diclofenac Sodium",
         "Enrofloxacin",
