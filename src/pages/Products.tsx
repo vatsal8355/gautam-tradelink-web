@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { FlaskRound, Pill, TestTube, Package } from "lucide-react";
@@ -29,16 +28,14 @@ const Products = () => {
       description: "High-quality active ingredients for pharmaceutical formulations",
       icon: FlaskRound,
       products: [
+        "Acetaminophen",
         "Aceclofenac",
-        "Amoxicillin",
-        "Amoxicillin Trihydrate",
         "Atorvastatin Calcium",
         "Azythromycin",
-        "Cefotaxime sodium sterile",
-        "Ceftriaxone Sodium",
         "Ciprofloxacin",
         "Diclofenac Sodium",
         "Enrofloxacin",
+        "Febuxostat",
         "Ibuprofen",
         "Levamisole HCL",
         "Losartan Potassium",
@@ -52,7 +49,7 @@ const Products = () => {
         "Telmisartan",
         "Tritinoin",
         "Warfin"
-      ]
+      ].sort((a, b) => a.localeCompare(b))
     },
     excipients: {
       title: "Excipients",
@@ -65,10 +62,10 @@ const Products = () => {
         "Butylated hydroxytoluene (BHT) – Antioxidant",
         "Calcium phosphate",
         "Croscarmellose Sodium",
+        "Ethylcellulose",
         "Gelatin",
         "Glycine",
         "HPMC pthalate",
-        "Lactose",
         "Lactose Monohydrate",
         "Magnesium Stearate",
         "Mannitol",
@@ -82,7 +79,7 @@ const Products = () => {
         "Sorbitol",
         "Stearic Acid",
         "Talc (Pharmacuetical Grade)"
-      ]
+      ].sort((a, b) => a.localeCompare(b))
     },
     nutraceuticals: {
       title: "Nutraceuticals",
@@ -94,7 +91,7 @@ const Products = () => {
         "Beta-glucan",
         "Coenzyme Q10",
         "Curcumin",
-        "Dbiotin",
+        "D-biotin",
         "Folic acid",
         "Glucosamine sulfate",
         "Green Tea Extract",
