@@ -501,6 +501,21 @@ const Brochure = () => {
                     <Button variant="outline" asChild>
                       <Link to="/contact">Contact Us</Link>
                     </Button>
+
+                    <Button 
+                      asChild 
+                      variant="secondary"
+                    >
+                      <a 
+                        href="/lovable-uploads/fde7057a-15bd-44d2-892a-bc6689bcb8ed.png"
+                        download="Gautam-Tradelink-New-Brochure.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        Download New Brochure (PDF)
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>
