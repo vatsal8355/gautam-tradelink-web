@@ -35,6 +35,37 @@ const valueCards = [
   },
 ];
 
+const CompanyGist = () => (
+  <section className="bg-white border-b border-muted pb-0">
+    <div className="container-custom py-16 flex flex-col lg:flex-row items-start gap-12">
+      <div className="flex-1">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0F5E59] mb-4">Our Company</h2>
+        <p className="text-base text-muted-foreground mb-4">
+          Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies—from emerging enterprises to large-scale manufacturing units across India.
+        </p>
+        <p className="text-base text-muted-foreground mb-4">
+          Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
+        </p>
+        <p className="text-base text-muted-foreground">
+          We have built our reputation on quality assurance, timely delivery, and ethical business practices—making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
+        </p>
+      </div>
+      {/* Company quick facts (Horizontal card) */}
+      <div className="rounded-xl bg-[#E7F9F3] border border-[#ccede3] p-7 w-full max-w-md lg:max-w-sm mx-auto lg:mx-0 shadow-sm">
+        <h3 className="text-xl font-semibold text-[#0F5E59] mb-3">Company Details</h3>
+        <ul className="flex flex-wrap gap-y-4 gap-x-6 text-sm text-[#0F5E59]">
+          <li className="w-1/2"> <span className="font-medium">Company:</span> Gautam Tradelink </li>
+          <li className="w-1/2"> <span className="font-medium">Type:</span> Proprietorship </li>
+          <li className="w-1/2"> <span className="font-medium">Location:</span> Mumbai, Gujarat (India) </li>
+          <li className="w-1/2"> <span className="font-medium">Services:</span> Trading & Distribution </li>
+          <li className="w-1/2"> <span className="font-medium">Products:</span> APIs, Excipients, Nutraceuticals, Intermediates, Chemicals </li>
+          <li className="w-1/2"> <span className="font-medium">Clientele:</span> Small to Large Pharma Manufacturers </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+);
+
 const About = () => {
   return (
     <>
@@ -46,20 +77,7 @@ const About = () => {
         />
       </Helmet>
       <main className="min-h-screen bg-muted">
-        {/* Hero Section */}
-        <section className="pt-32 pb-12 bg-white border-b border-muted">
-          <div className="container-custom">
-            <div className="max-w-3xl">
-              <h1 className="heading-xl mb-4">About Gautam Tradelink</h1>
-              <p className="text-lg text-muted-foreground mb-2">
-                Trusted Sourcing Partner for Pharmaceutical Excellence
-              </p>
-              <p className="text-base text-muted-foreground">
-                Based in Mumbai and Gujarat, we connect manufacturers across India and beyond with premium pharmaceutical ingredients—delivered on time, every time.
-              </p>
-            </div>
-          </div>
-        </section>
+        <CompanyGist />
 
         {/* Value Proposition */}
         <section className="section-padding">
@@ -67,7 +85,7 @@ const About = () => {
             <div className="text-center mb-10">
               <h2 className="heading-lg mb-2">What Sets Us Apart</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                With a steadfast focus on quality, reliability, and tailored client service, Gautam Tradelink provides a comprehensive, trusted solution for pharmaceutical raw materials and sourcing.
+                Powered by experience and driven by integrity, Gautam Tradelink offers seamless access to premium pharmaceutical ingredients with an unwavering focus on quality, reliability, and personalized service. Our commitment extends beyond sourcing—we build lasting relationships that help our clients grow and succeed in a competitive industry.
               </p>
             </div>
             {/* Value Cards */}
@@ -87,37 +105,11 @@ const About = () => {
             </div>
           </div>
         </section>
-
-        {/* Company Overview */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="heading-lg mb-3">Our Mission</h2>
-              <p className="text-base text-muted-foreground mb-3">
-                To empower pharmaceutical manufacturers with safe, high-quality, and fully compliant active ingredients, excipients, nutraceuticals, and intermediates—sourced from trusted suppliers and backed by diligent service.
-              </p>
-              <p className="text-base text-muted-foreground">
-                Every batch is batch-tested and IP/BP/USP-compliant, ensuring your formulations meet the highest benchmarks.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Ethos / Leadership */}
-        <section className="section-padding bg-muted">
-          <div className="container-custom">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="heading-lg mb-3">Our Ethos & Leadership</h2>
-              <p className="text-base text-muted-foreground">
-                Led by <span className="font-semibold text-[#0E766E]">Mr. Vatsalbhai Shah</span>, our dedicated team delivers more than products—we provide clear guidance, regulatory support, and personalized solutions tailored to your needs.<br />
-                <span className="block mt-2">Gautam Tradelink is committed to building long-term partnerships rooted in trust, transparency, and results.</span>
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Removed Mission, Ethos & Leadership as per instructions */}
       </main>
     </>
   );
 };
 
 export default About;
+
