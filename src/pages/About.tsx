@@ -1,6 +1,39 @@
 
 import { Helmet } from "react-helmet-async";
-import { ShieldCheck, Clock, Eye, Award } from "lucide-react";
+import { Award, BriefcaseBusiness, DollarSign, ShieldCheck, User, FileText } from "lucide-react";
+
+const valueCards = [
+  {
+    icon: Award,
+    title: "Quality Commitment",
+    text: "We source only the highest quality products that meet IP, BP, and USP standards, ensuring your formulations have the best ingredients."
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Industry Expertise",
+    text: "Our team brings years of experience in pharmaceutical ingredient sourcing, providing valuable insights and guidance."
+  },
+  {
+    icon: DollarSign,
+    title: "Competitive Pricing",
+    text: "Our established supplier network allows us to offer high-quality products at competitive market rates."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Reliable Supply Chain",
+    text: "We maintain strong relationships with manufacturers to ensure consistent availability and timely delivery."
+  },
+  {
+    icon: User,
+    title: "Personalized Service",
+    text: "We work closely with each client to understand their unique requirements and provide tailored sourcing solutions."
+  },
+  {
+    icon: FileText,
+    title: "Documentation Support",
+    text: "We provide comprehensive documentation for all products, helping you meet regulatory requirements with ease."
+  },
+];
 
 const About = () => {
   return (
@@ -9,88 +42,75 @@ const About = () => {
         <title>About Us | Gautam Tradelink</title>
         <meta
           name="description"
-          content="Discover Gautam Tradelink – your reliable partner for high-quality pharmaceutical raw materials and sourcing solutions."
+          content="Discover the unmatched sourcing standards, experience, and client service of Gautam Tradelink – your reliable partner in pharmaceutical raw material supply."
         />
       </Helmet>
-
-      <main>
+      <main className="min-h-screen bg-muted">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 bg-primary">
+        <section className="pt-32 pb-12 bg-white border-b border-muted">
           <div className="container-custom">
             <div className="max-w-3xl">
-              <h1 className="heading-xl mb-6 text-[#0F5E59]">About Gautam Tradelink</h1>
-              <p className="text-lg opacity-90 text-white">
-                Trusted sourcing partner for pharmaceutical raw materials across India and beyond.
+              <h1 className="heading-xl mb-4">About Gautam Tradelink</h1>
+              <p className="text-lg text-muted-foreground mb-2">
+                Trusted Sourcing Partner for Pharmaceutical Excellence
               </p>
+              <p className="text-base text-muted-foreground">
+                Based in Mumbai and Gujarat, we connect manufacturers across India and beyond with premium pharmaceutical ingredients—delivered on time, every time.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Value Proposition */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-10">
+              <h2 className="heading-lg mb-2">What Sets Us Apart</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                With a steadfast focus on quality, reliability, and tailored client service, Gautam Tradelink provides a comprehensive, trusted solution for pharmaceutical raw materials and sourcing.
+              </p>
+            </div>
+            {/* Value Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto animate-fade-in">
+              {valueCards.map((card, i) => (
+                <div
+                  key={card.title}
+                  className="bg-white rounded-xl p-6 shadow-md border border-muted flex flex-col items-start gap-3 hover:shadow-lg hover-scale transition-all duration-300"
+                >
+                  <div className="p-3 bg-primary/10 text-primary rounded-full mb-2">
+                    <card.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-1 text-[#0F5E59]">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground">{card.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Company Overview */}
-        <section className="section-padding">
+        <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="heading-lg mb-6">Who We Are</h2>
-              <p className="text-muted-foreground mb-3">
-                Based in Mumbai and Gujarat, Gautam Tradelink supplies premium Active Pharmaceutical Ingredients (APIs), Excipients, Nutraceuticals, and Intermediates.
+              <h2 className="heading-lg mb-3">Our Mission</h2>
+              <p className="text-base text-muted-foreground mb-3">
+                To empower pharmaceutical manufacturers with safe, high-quality, and fully compliant active ingredients, excipients, nutraceuticals, and intermediates—sourced from trusted suppliers and backed by diligent service.
               </p>
-              <p className="text-muted-foreground">
-                We connect pharmaceutical manufacturers with top-quality, IP/BP/USP-compliant ingredients—always on time, with tailored service.
+              <p className="text-base text-muted-foreground">
+                Every batch is batch-tested and IP/BP/USP-compliant, ensuring your formulations meet the highest benchmarks.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Values and Advantages */}
+        {/* Ethos / Leadership */}
         <section className="section-padding bg-muted">
           <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="heading-lg mb-2">Why Partners Trust Us</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                We build lasting relationships with reliable service and a focus on quality.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white rounded-xl p-5 shadow-sm flex flex-col items-center">
-                <div className="p-3 bg-primary/10 text-primary rounded-full mb-3">
-                  <ShieldCheck className="h-6 w-6" />
-                </div>
-                <h3 className="font-semibold mb-2">Quality Focus</h3>
-                <p className="text-sm text-muted-foreground text-center">Strict standards & batch-tested products</p>
-              </div>
-              <div className="bg-white rounded-xl p-5 shadow-sm flex flex-col items-center">
-                <div className="p-3 bg-primary/10 text-primary rounded-full mb-3">
-                  <Clock className="h-6 w-6" />
-                </div>
-                <h3 className="font-semibold mb-2">On-time Delivery</h3>
-                <p className="text-sm text-muted-foreground text-center">Reliable supply chain across India</p>
-              </div>
-              <div className="bg-white rounded-xl p-5 shadow-sm flex flex-col items-center">
-                <div className="p-3 bg-primary/10 text-primary rounded-full mb-3">
-                  <Eye className="h-6 w-6" />
-                </div>
-                <h3 className="font-semibold mb-2">Transparency</h3>
-                <p className="text-sm text-muted-foreground text-center">Clarity in sourcing, pricing, & communication</p>
-              </div>
-              <div className="bg-white rounded-xl p-5 shadow-sm flex flex-col items-center">
-                <div className="p-3 bg-primary/10 text-primary rounded-full mb-3">
-                  <Award className="h-6 w-6" />
-                </div>
-                <h3 className="font-semibold mb-2">Service</h3>
-                <p className="text-sm text-muted-foreground text-center">Personalized solutions & full documentation</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Owner and Ethos */}
-        <section className="section-padding">
-          <div className="container-custom">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="heading-lg mb-4">Our Ethos</h2>
-              <p className="text-muted-foreground">
-                Led by Mr. Vatsalbhai Shah, our team delivers more than products: we provide guidance, reliability, and complete regulatory support to every client.
+              <h2 className="heading-lg mb-3">Our Ethos & Leadership</h2>
+              <p className="text-base text-muted-foreground">
+                Led by <span className="font-semibold text-[#0E766E]">Mr. Vatsalbhai Shah</span>, our dedicated team delivers more than products—we provide clear guidance, regulatory support, and personalized solutions tailored to your needs.<br />
+                <span className="block mt-2">Gautam Tradelink is committed to building long-term partnerships rooted in trust, transparency, and results.</span>
               </p>
             </div>
           </div>
