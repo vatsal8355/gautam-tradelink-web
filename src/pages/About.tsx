@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet-async";
 import { Award, BriefcaseBusiness, DollarSign, ShieldCheck, User, FileText } from "lucide-react";
 
@@ -45,39 +46,39 @@ const About = () => {
         />
       </Helmet>
       <main className="min-h-screen bg-muted">
-        {/* Visually appealing full-width company description */}
-        <section className="w-full bg-white border-b border-muted py-16">
-          <div className="container-custom max-w-none">
-            <div className="relative">
-              {/* Decorative background for subtle visual appeal */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#E7F9F3]/50 via-white/30 to-[#F1F0FB]/60 opacity-75 pointer-events-none" />
-              <div className="relative z-10">
-                <h1 className="hero-heading mb-8 text-left md:text-center">About Gautam Tradelink</h1>
-                <p className="text-xl md:text-2xl text-[#0F5E59] leading-relaxed md:leading-10 font-medium tracking-wide px-0 md:px-8 w-full text-justify">
-                  Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies from emerging enterprises to large-scale manufacturing units across India.
-                  <br /><br />
-                  Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
-                  <br /><br />
-                  We have built our reputation on quality assurance, timely delivery, and ethical business practices making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
-                </p>
-              </div>
+        {/* "About Gautam Tradelink" - Redesigned to match Leadership & Expertise style */}
+        <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16">
+          <div className="container-custom max-w-5xl mx-auto flex flex-col items-center justify-center">
+            <div className="flex-1 w-full text-left md:text-center px-0 md:px-6">
+              <h1 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-4">About Gautam Tradelink</h1>
+              <p className="text-muted-foreground text-lg mb-3">
+                Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies from emerging enterprises to large-scale manufacturing units across India.
+              </p>
+              <p className="text-muted-foreground text-lg mb-3">
+                Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
+              </p>
+              <p className="text-muted-foreground text-lg">
+                We have built our reputation on quality assurance, timely delivery, and ethical business practices making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Proprietor and Team Details - Leadership & Expertise */}
-        <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16">
+        <section className="bg-white border-b border-muted py-12 md:py-16">
           <div className="container-custom max-w-5xl mx-auto flex flex-col items-center justify-center">
             <div className="flex-1 w-full text-left md:text-center px-0 md:px-6">
-              <h2 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-4">Leadership &amp; Expertise</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-4">
+                Leadership &amp; Expertise
+              </h2>
               <p className="text-muted-foreground text-lg mb-3">
-                At the helm of Gautam Tradelink is our proprietor, Mr. Vatsalbhai Shah, whose deep-rooted industry expertise guides our organization forward. With significant experience spanning both pharmaceutical and chemical industries, Mr. Shah brings strategic insight into evolving market needs and steadfast commitment to upholding regulatory excellence.
+                At the helm of Gautam Tradelink is our proprietor, Mr. Vatsalbhai Shah, whose expertise is grounded in years of experience across both pharmaceutical and chemical industries. His strategic vision and hands-on approach ensure each client receives unparalleled guidance and personal attention.
               </p>
               <p className="text-muted-foreground text-lg mb-3">
-                His leadership ensures product authenticity, streamlined procurement, and ethical operations at every stage. This has empowered our clients to make confident sourcing decisions and consistently stay ahead of regulatory changes.
+                Guided by Mr. Shah’s leadership, our organization is committed to rigorous product authenticity, streamlined procurement, and maintaining the highest regulatory standards. This empowers clients to make sourcing decisions with confidence and agility in a changing market landscape.
               </p>
               <p className="text-muted-foreground text-lg">
-                Backed by a skilled team of professionals with multifaceted knowledge and operational precision, Gautam Tradelink functions as a collaborative partner—delivering tailored solutions, sharing market intelligence, and responding proactively to client challenges. Our teamwork and dedication fuel the sustained business growth and compliance of those we serve.
+                Our team brings together multifaceted knowledge and operational precision—collaborating to deliver tailored solutions, share current market intelligence, and proactively address client challenges. This teamwork and dedication foster lasting growth, business continuity, and compliance for those we serve.
               </p>
             </div>
           </div>
@@ -115,3 +116,4 @@ const About = () => {
 };
 
 export default About;
+
