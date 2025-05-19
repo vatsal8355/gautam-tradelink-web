@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 import { Award, BriefcaseBusiness, DollarSign, ShieldCheck, User, FileText } from "lucide-react";
 
@@ -46,44 +45,39 @@ const About = () => {
         />
       </Helmet>
       <main className="min-h-screen bg-muted">
-        {/* New visually appealing full-width company section */}
-        <section className="bg-white border-b border-muted">
-          <div className="container-custom py-20 flex flex-col items-center justify-center text-center relative">
-            {/* Subtle decorative gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#E7F9F3] via-white/60 to-[#F1F0FB] opacity-50 pointer-events-none" />
-            <div className="relative z-10 max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0F5E59] mb-6 drop-shadow">
-                Our Company
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground mb-5 leading-relaxed">
-                Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies from emerging enterprises to large-scale manufacturing units across India.
-              </p>
-              <p className="text-lg md:text-xl text-muted-foreground mb-5 leading-relaxed">
-                Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
-              </p>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                We have built our reputation on quality assurance, timely delivery, and ethical business practices – making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
-              </p>
+        {/* Visually appealing full-width company description */}
+        <section className="w-full bg-white border-b border-muted py-16">
+          <div className="container-custom max-w-none">
+            <div className="relative">
+              {/* Decorative background for subtle visual appeal */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#E7F9F3]/50 via-white/30 to-[#F1F0FB]/60 opacity-75 pointer-events-none" />
+              <div className="relative z-10">
+                <h1 className="hero-heading mb-8 text-left md:text-center">About Gautam Tradelink</h1>
+                <p className="text-xl md:text-2xl text-[#0F5E59] leading-relaxed md:leading-10 font-medium tracking-wide px-0 md:px-8 w-full text-justify">
+                  Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies from emerging enterprises to large-scale manufacturing units across India.
+                  <br /><br />
+                  Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
+                  <br /><br />
+                  We have built our reputation on quality assurance, timely delivery, and ethical business practices making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Proprietor and Team Details */}
+        {/* Proprietor and Team Details - Leadership & Expertise */}
         <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16">
-          <div className="container-custom max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            <div className="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg w-32 h-32 md:w-40 md:h-40 border-4 border-[#0E766E]/10">
-              <User className="text-primary w-16 h-16 md:w-20 md:h-20" />
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-3">Leadership & Expertise</h3>
+          <div className="container-custom max-w-5xl mx-auto flex flex-col items-center justify-center">
+            <div className="flex-1 w-full text-left md:text-center px-0 md:px-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-4">Leadership &amp; Expertise</h2>
               <p className="text-muted-foreground text-lg mb-3">
-                Under the exemplary leadership of our proprietor, Mr. Vatsalbhai Shah, Gautam Tradelink has flourished through vision, expertise, and a resolute commitment to ethical business conduct.
+                At the helm of Gautam Tradelink is our proprietor, Mr. Vatsalbhai Shah, whose deep-rooted industry expertise guides our organization forward. With significant experience spanning both pharmaceutical and chemical industries, Mr. Shah brings strategic insight into evolving market needs and steadfast commitment to upholding regulatory excellence.
               </p>
               <p className="text-muted-foreground text-lg mb-3">
-                With over two decades of hands-on experience in pharmaceutical distribution, Mr. Shah’s guidance ensures product authenticity, seamless procurement, and lasting partnerships. His industry insight empowers our clients to make informed decisions and anticipate regulatory shifts.
+                His leadership ensures product authenticity, streamlined procurement, and ethical operations at every stage. This has empowered our clients to make confident sourcing decisions and consistently stay ahead of regulatory changes.
               </p>
               <p className="text-muted-foreground text-lg">
-                Our team comprises experienced professionals who bring technical know-how, operational precision, and a passion for delivering solutions tailored to each client’s requirements. United by a culture of trust, teamwork, and continuous learning, we offer not just products, but a journey towards sustained business growth and compliance.
+                Backed by a skilled team of professionals with multifaceted knowledge and operational precision, Gautam Tradelink functions as a collaborative partner—delivering tailored solutions, sharing market intelligence, and responding proactively to client challenges. Our teamwork and dedication fuel the sustained business growth and compliance of those we serve.
               </p>
             </div>
           </div>
