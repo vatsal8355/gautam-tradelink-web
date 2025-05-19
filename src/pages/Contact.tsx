@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -149,6 +148,12 @@ const Contact = () => {
                             className="block text-muted-foreground hover:text-primary transition-colors"
                           >
                             Marketing.gautamtradelink@hotmail.com
+                          </a>
+                          <a
+                            href="mailto:Billing.gautamtradelink@gmail.com"
+                            className="block text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            Billing.gautamtradelink@gmail.com
                           </a>
                         </div>
                       </div>

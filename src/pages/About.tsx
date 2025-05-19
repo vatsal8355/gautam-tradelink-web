@@ -6,65 +6,34 @@ const valueCards = [
   {
     icon: Award,
     title: "Quality Commitment",
-    text: "We source only the highest quality products that meet IP, BP, and USP standards, ensuring your formulations have the best ingredients."
+    text: "Sourcing only the highest quality ingredients that meet global standards (IP, BP, USP), we enable formulations built on excellence."
   },
   {
     icon: BriefcaseBusiness,
     title: "Industry Expertise",
-    text: "Our team brings years of experience in pharmaceutical ingredient sourcing, providing valuable insights and guidance."
+    text: "Years of domain experience and robust market knowledge streamline your ingredient procurement with accuracy and speed."
   },
   {
     icon: DollarSign,
     title: "Competitive Pricing",
-    text: "Our established supplier network allows us to offer high-quality products at competitive market rates."
+    text: "Our established supplier network enables access to the best market rates without compromising product integrity."
   },
   {
     icon: ShieldCheck,
     title: "Reliable Supply Chain",
-    text: "We maintain strong relationships with manufacturers to ensure consistent availability and timely delivery."
+    text: "Consistent fulfillment and timely delivery, thanks to trusted relationships with leading manufacturers and logistics partners."
   },
   {
     icon: User,
     title: "Personalized Service",
-    text: "We work closely with each client to understand their unique requirements and provide tailored sourcing solutions."
+    text: "A dedicated, responsive team collaborates closely to understand client needs, providing tailored sourcing strategies and solutions."
   },
   {
     icon: FileText,
     title: "Documentation Support",
-    text: "We provide comprehensive documentation for all products, helping you meet regulatory requirements with ease."
+    text: "Comprehensive, accurate documentation accompanies every order to help you meet your compliance and regulatory needs."
   },
 ];
-
-const CompanyGist = () => (
-  <section className="bg-white border-b border-muted pb-0">
-    <div className="container-custom py-16 flex flex-col lg:flex-row items-start gap-12">
-      <div className="flex-1">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0F5E59] mb-4">Our Company</h2>
-        <p className="text-base text-muted-foreground mb-4">
-          Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies—from emerging enterprises to large-scale manufacturing units across India.
-        </p>
-        <p className="text-base text-muted-foreground mb-4">
-          Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
-        </p>
-        <p className="text-base text-muted-foreground">
-          We have built our reputation on quality assurance, timely delivery, and ethical business practices—making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
-        </p>
-      </div>
-      {/* Company quick facts (Horizontal card) */}
-      <div className="rounded-xl bg-[#E7F9F3] border border-[#ccede3] p-7 w-full max-w-md lg:max-w-sm mx-auto lg:mx-0 shadow-sm">
-        <h3 className="text-xl font-semibold text-[#0F5E59] mb-3">Company Details</h3>
-        <ul className="flex flex-wrap gap-y-4 gap-x-6 text-sm text-[#0F5E59]">
-          <li className="w-1/2"> <span className="font-medium">Company:</span> Gautam Tradelink </li>
-          <li className="w-1/2"> <span className="font-medium">Type:</span> Proprietorship </li>
-          <li className="w-1/2"> <span className="font-medium">Location:</span> Mumbai, Gujarat (India) </li>
-          <li className="w-1/2"> <span className="font-medium">Services:</span> Trading & Distribution </li>
-          <li className="w-1/2"> <span className="font-medium">Products:</span> APIs, Excipients, Nutraceuticals, Intermediates, Chemicals </li>
-          <li className="w-1/2"> <span className="font-medium">Clientele:</span> Small to Large Pharma Manufacturers </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-);
 
 const About = () => {
   return (
@@ -73,11 +42,52 @@ const About = () => {
         <title>About Us | Gautam Tradelink</title>
         <meta
           name="description"
-          content="Discover the unmatched sourcing standards, experience, and client service of Gautam Tradelink – your reliable partner in pharmaceutical raw material supply."
+          content="Discover the sourcing standards, experience, and client service of Gautam Tradelink—your reliable partner in pharmaceutical raw material supply."
         />
       </Helmet>
       <main className="min-h-screen bg-muted">
-        <CompanyGist />
+        {/* New visually appealing full-width company section */}
+        <section className="bg-white border-b border-muted">
+          <div className="container-custom py-20 flex flex-col items-center justify-center text-center relative">
+            {/* Subtle decorative gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#E7F9F3] via-white/60 to-[#F1F0FB] opacity-50 pointer-events-none" />
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0F5E59] mb-6 drop-shadow">
+                Our Company
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground mb-5 leading-relaxed">
+                Gautam Tradelink is a trusted proprietorship specializing in the trading and distribution of pharmaceutical raw materials, APIs, excipients, nutraceuticals, intermediates, and chemicals. With a proven track record, we serve a diverse spectrum of pharmaceutical companies from emerging enterprises to large-scale manufacturing units across India.
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground mb-5 leading-relaxed">
+                Our head office in Mumbai anchors a strong presence in Gujarat and beyond, positioning us to supply the heart of India’s pharmaceutical industry with reliable products and exceptional service.
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                We have built our reputation on quality assurance, timely delivery, and ethical business practices – making us the preferred sourcing partner for manufacturers who prioritize compliance, efficiency, and trusted relationships.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Proprietor and Team Details */}
+        <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16">
+          <div className="container-custom max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div className="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg w-32 h-32 md:w-40 md:h-40 border-4 border-[#0E766E]/10">
+              <User className="text-primary w-16 h-16 md:w-20 md:h-20" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-3">Leadership & Expertise</h3>
+              <p className="text-muted-foreground text-lg mb-3">
+                Under the exemplary leadership of our proprietor, Mr. Vatsalbhai Shah, Gautam Tradelink has flourished through vision, expertise, and a resolute commitment to ethical business conduct.
+              </p>
+              <p className="text-muted-foreground text-lg mb-3">
+                With over two decades of hands-on experience in pharmaceutical distribution, Mr. Shah’s guidance ensures product authenticity, seamless procurement, and lasting partnerships. His industry insight empowers our clients to make informed decisions and anticipate regulatory shifts.
+              </p>
+              <p className="text-muted-foreground text-lg">
+                Our team comprises experienced professionals who bring technical know-how, operational precision, and a passion for delivering solutions tailored to each client’s requirements. United by a culture of trust, teamwork, and continuous learning, we offer not just products, but a journey towards sustained business growth and compliance.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Value Proposition */}
         <section className="section-padding">
@@ -90,7 +100,7 @@ const About = () => {
             </div>
             {/* Value Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto animate-fade-in">
-              {valueCards.map((card, i) => (
+              {valueCards.map((card) => (
                 <div
                   key={card.title}
                   className="bg-white rounded-xl p-6 shadow-md border border-muted flex flex-col items-start gap-3 hover:shadow-lg hover-scale transition-all duration-300"
@@ -105,11 +115,9 @@ const About = () => {
             </div>
           </div>
         </section>
-        {/* Removed Mission, Ethos & Leadership as per instructions */}
       </main>
     </>
   );
 };
 
 export default About;
-
