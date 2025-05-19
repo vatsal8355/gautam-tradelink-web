@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 import { Award, BriefcaseBusiness, DollarSign, ShieldCheck, User, FileText } from "lucide-react";
 
@@ -46,8 +45,8 @@ const About = () => {
         />
       </Helmet>
       <main className="min-h-screen bg-muted">
-        {/* "About Gautam Tradelink" - Redesigned to match Leadership & Expertise style */}
-        <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16">
+        {/* "About Gautam Tradelink" - Ensure it is NOT covered by navbar by adding pt-28 */}
+        <section className="bg-[#E7F9F3] border-b border-muted py-12 md:py-16 pt-28">
           <div className="container-custom max-w-5xl mx-auto flex flex-col items-center justify-center">
             <div className="flex-1 w-full text-left md:text-center px-0 md:px-6">
               <h1 className="text-2xl md:text-3xl font-semibold text-[#0F5E59] mb-4">About Gautam Tradelink</h1>
@@ -116,4 +115,3 @@ const About = () => {
 };
 
 export default About;
-
