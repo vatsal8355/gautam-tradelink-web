@@ -97,7 +97,10 @@ const Contact = () => {
         <section className="pt-32 pb-16 bg-primary">
           <div className="container-custom">
             <div className="max-w-3xl text-white">
-              <h1 className="heading-xl mb-6">Contact Us</h1>
+              {/* Updated color and shadow for heading */}
+              <h1 className="heading-xl mb-6 text-white drop-shadow-md">
+                Contact Us
+              </h1>
               <p className="text-lg opacity-90">
                 Get in touch with our team for inquiries about our products or services.
               </p>
