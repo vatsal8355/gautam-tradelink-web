@@ -59,7 +59,6 @@ const Products = () => {
         "Telmisartan",
         "Trimethoprim",
         "Tropicamide",
-        "Vildagplitin",
         "Xylometazoline"
       ].sort((a, b) => a.localeCompare(b))
     },
