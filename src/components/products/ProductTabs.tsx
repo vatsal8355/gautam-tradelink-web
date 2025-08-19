@@ -28,7 +28,7 @@ const ProductTabs = ({ activeCategory, categoryInfo, onTabChange }: ProductTabsP
       onValueChange={onTabChange}
       className="w-full"
     >
-      <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 mb-[3rem] sm:mb-8">
+      <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-0 mb-[3rem] sm:mb-8">
         <TabsTrigger 
           value="api" 
           className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
@@ -52,14 +52,6 @@ const ProductTabs = ({ activeCategory, categoryInfo, onTabChange }: ProductTabsP
         >
           <TestTube className="h-4 w-4" />
           <span>Nutraceuticals</span>
-        </TabsTrigger>
-        <TabsTrigger 
-          value="intermediates" 
-          className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
-          id="intermediates"
-        >
-          <Package className="h-4 w-4" />
-          <span>Intermediates</span>
         </TabsTrigger>
       </TabsList>
 
