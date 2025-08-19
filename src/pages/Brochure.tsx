@@ -123,60 +123,6 @@ const Brochure = () => {
         "Vitamin C (plain/coated)",
         "Vitamin E"
       ]
-    },
-    intermediates: {
-      title: "Intermediates & Chemicals",
-      description: "Specialized chemicals for pharmaceutical synthesis",
-      productPairs: [
-        { name: "1,2,4-Triazole", use: "Antifungal intermediate" },
-        { name: "1-Naphthylamine", use: "Used in analgesic synthesis" },
-        { name: "2,4-Dichlorobenzyl alcohol", use: "Used in throat lozenges" },
-        { name: "2,4-Dinitrophenol", use: "Historical intermediate for metabolic drugs" },
-        { name: "2,6-Dichloroaniline", use: "Used in antihistamines" },
-        { name: "2-Amino-5-methylthiazole", use: "Intermediate in antibiotic synthesis" },
-        { name: "2-Chlorobenzyl chloride", use: "Used in antihistamines" },
-        { name: "2-Methylimidazole", use: "Intermediate in anti-ulcer drugs" },
-        { name: "3,4-Dihydroxybenzaldehyde", use: "Dopamine-related drug intermediate" },
-        { name: "3-Nitrobenzaldehyde", use: "Intermediate for cardiovascular drugs" },
-        { name: "4-Aminosalicylic acid", use: "Anti-TB drug intermediate" },
-        { name: "4-Hydroxycoumarin", use: "Intermediate in anticoagulants like warfarin" },
-        { name: "4-Isobutylacetophenone", use: "Ibuprofen intermediate" },
-        { name: "Acetyl chloride", use: "Acylating agent in various APIs" },
-        { name: "Aniline", use: "Intermediate for sulfa drugs" },
-        { name: "Benzimidazole", use: "Key structure in antiparasitic drugs" },
-        { name: "Benzyl chloride", use: "Used in antihistamine synthesis" },
-        { name: "Benzylamine", use: "Used in cardiovascular agents" },
-        { name: "Chlorhexidine base", use: "Intermediate for antiseptics" },
-        { name: "Chloroacetyl chloride", use: "Used in anti-inflammatory synthesis" },
-        { name: "Chlorobenzene", use: "Used in muscle relaxants" },
-        { name: "Cyclohexylamine", use: "Used in synthesis of stimulants" },
-        { name: "Diethyl malonate", use: "Used in barbiturate synthesis" },
-        { name: "Dimethylamine", use: "Used in antihistamines and CNS drugs" },
-        { name: "Epichlorohydrin", use: "Intermediate for beta blockers" },
-        { name: "Ethyl acetoacetate", use: "Building block in drug synthesis" },
-        { name: "Formic acid", use: "Used in reduction and API modification" },
-        { name: "Hydrazine hydrate", use: "Used in anti-TB and cancer drugs" },
-        { name: "Imidazole", use: "Core of antifungals like ketoconazole" },
-        { name: "Isatin", use: "Intermediate in antidepressants" },
-        { name: "Isobutylbenzene", use: "Precursor to ibuprofen" },
-        { name: "Lactic acid", use: "Used in synthesis of lactate salts" },
-        { name: "Methyl iodide", use: "Methylating agent in many syntheses" },
-        { name: "Methylamine", use: "Basic amine used in antidepressants" },
-        { name: "N-Methylpiperazine", use: "Used in cardiovascular agents" },
-        { name: "N-Phenylpiperazine", use: "Intermediate in antipsychotics" },
-        { name: "Naphthol", use: "Intermediate for anti-inflammatory drugs" },
-        { name: "P-aminophenol", use: "Intermediate for paracetamol" },
-        { name: "Phenol", use: "Starting material for antiseptics" },
-        { name: "Phenylacetic acid", use: "Intermediate for penicillin derivatives" },
-        { name: "Phthalic anhydride", use: "Used in antiepileptics" },
-        { name: "Piperazine", use: "Base for many anthelmintics and antipsychotics" },
-        { name: "Piperidine", use: "Core structure in many antihistamines" },
-        { name: "Succinic acid", use: "Intermediate for some anesthetics" },
-        { name: "Thiazole", use: "Found in anti-infective drugs" },
-        { name: "Thionyl chloride", use: "Chlorinating agent" },
-        { name: "Toluene diisocyanate", use: "Intermediate in some corticosteroids" },
-        { name: "Trichloroacetic acid", use: "Used in protein precipitation, API synthesis" }
-      ]
     }
   };
 
@@ -262,10 +208,10 @@ const Brochure = () => {
                     <TabsContent value="overview" className="space-y-4">
                       <h3 className="text-xl font-semibold">Company Profile</h3>
                       <p>
-                        Gautam Tradelink is a premium supplier of pharmaceutical raw materials, 
-                        specializing in Active Pharmaceutical Ingredients (APIs), Excipients, 
-                        Nutraceuticals, and Chemical Intermediates. We serve pharmaceutical 
-                        manufacturers worldwide with high-quality ingredients that meet international standards.
+                         Gautam Tradelink is a premium supplier of pharmaceutical raw materials, 
+                         specializing in Active Pharmaceutical Ingredients (APIs), Excipients, 
+                         and Nutraceuticals. We serve pharmaceutical 
+                         manufacturers worldwide with high-quality ingredients that meet international standards.
                       </p>
 
                       <div className="mt-6 space-y-3">
@@ -297,11 +243,11 @@ const Brochure = () => {
 
                     <TabsContent value="products">
                       <div className="space-y-8">
-                        <h3 className="text-xl font-semibold">Our Product Categories</h3>
-                        <p className="text-muted-foreground">
-                          We offer a comprehensive range of products across four main categories. 
-                          Below is a selection of our most popular products in each category.
-                        </p>
+                         <h3 className="text-xl font-semibold">Our Product Categories</h3>
+                         <p className="text-muted-foreground">
+                           We offer a comprehensive range of products across three main categories. 
+                           Below is a selection of our most popular products in each category.
+                         </p>
 
                         <div className="space-y-6">
                           <div>
@@ -349,23 +295,6 @@ const Brochure = () => {
                             )}
                           </div>
 
-                          <div>
-                            <h4 className="text-lg font-medium text-primary">{productCategories.intermediates.title}</h4>
-                            <p className="text-sm text-muted-foreground mb-3">{productCategories.intermediates.description}</p>
-                            <div className="grid grid-cols-1 gap-2">
-                              {productCategories.intermediates.productPairs.slice(0, 5).map((pair, index) => (
-                                <div key={index} className="text-sm p-2 bg-muted/50 rounded flex justify-between">
-                                  <span className="font-medium">{pair.name}</span>
-                                  <span className="text-xs text-muted-foreground">{pair.use}</span>
-                                </div>
-                              ))}
-                            </div>
-                            {productCategories.intermediates.productPairs.length > 5 && (
-                              <p className="text-xs text-muted-foreground mt-2">
-                                +{productCategories.intermediates.productPairs.length - 5} more products available
-                              </p>
-                            )}
-                          </div>
                         </div>
 
                         <p className="text-center text-muted-foreground italic text-sm">

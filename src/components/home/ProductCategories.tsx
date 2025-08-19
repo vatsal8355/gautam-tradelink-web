@@ -28,14 +28,6 @@ const categories = [
     examples: ["Vitamin A", "Vitamin C (plain/coated)", "Beta Carotene"],
     bgClass: "bg-emerald-50"
   },
-  {
-    id: "intermediates",
-    title: "Intermediates & Chemicals",
-    icon: Package,
-    description: "Specialized chemicals for pharmaceutical synthesis",
-    examples: ["P-aminophenol", "Benzyl chloride", "Lactic acid"],
-    bgClass: "bg-amber-50"
-  }
 ];
 
 const ProductCategories = () => {
@@ -50,7 +42,7 @@ const ProductCategories = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {categories.map((category) => (
             <div 
               key={category.id}
