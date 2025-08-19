@@ -13,7 +13,7 @@ const Hero = () => {
               Quality Pharmaceutical<br />Raw Materials & APIs
             </h1>
             <p className="hero-subheading mx-auto mb-8">
-              Premium supplier of Pharmaceutical Raw materials, API, Excipients, Nutraceuticals,<br />Intermediates and Chemicals for all your pharmaceutical needs.
+              Premium supplier of Pharmaceutical Raw materials, API, Excipients and Nutraceuticals for all your pharmaceutical needs.
             </p>
           </div>
           

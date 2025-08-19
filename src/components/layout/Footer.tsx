@@ -73,11 +73,6 @@ const Footer = () => {
                   Nutraceuticals
                 </Link>
               </li>
-              <li>
-                <Link to="/products#intermediates" className="hover:text-[#E7F9F3] transition-colors">
-                  Intermediates & Chemicals
-                </Link>
-              </li>
             </ul>
           </div>
 
