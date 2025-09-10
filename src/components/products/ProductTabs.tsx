@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FlaskRound, Pill, TestTube, Package } from "lucide-react";
+import { FlaskRound, Pill, TestTube, Package, Heart } from "lucide-react";
 import ProductDisplay from "./ProductDisplay";
 
 interface CategoryInfo {
@@ -28,7 +28,7 @@ const ProductTabs = ({ activeCategory, categoryInfo, onTabChange }: ProductTabsP
       onValueChange={onTabChange}
       className="w-full"
     >
-      <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-0 mb-[3rem] sm:mb-8">
+      <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 mb-[3rem] sm:mb-8">
         <TabsTrigger 
           value="api" 
           className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
@@ -44,6 +44,14 @@ const ProductTabs = ({ activeCategory, categoryInfo, onTabChange }: ProductTabsP
         >
           <Pill className="h-4 w-4" />
           <span>Excipients</span>
+        </TabsTrigger>
+        <TabsTrigger 
+          value="vitamins" 
+          className="flex items-center justify-center space-x-2 py-3 px-2 md:py-1.5 md:px-3" 
+          id="vitamins"
+        >
+          <Heart className="h-4 w-4" />
+          <span>Vitamins</span>
         </TabsTrigger>
         <TabsTrigger 
           value="nutraceuticals" 

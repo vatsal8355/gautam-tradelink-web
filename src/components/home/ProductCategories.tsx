@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { FlaskRound, Pill, TestTube, Package } from "lucide-react";
+import { FlaskRound, Pill, TestTube, Package, Heart } from "lucide-react";
 
 const categories = [
   {
@@ -21,11 +21,19 @@ const categories = [
     bgClass: "bg-secondary/10"
   },
   {
+    id: "vitamins",
+    title: "Vitamins",
+    icon: Heart,
+    description: "Essential organic nutrients for growth, development, and normal body functioning",
+    examples: ["Vitamin A", "Vitamin B Complex", "Vitamin C", "Vitamin D3"],
+    bgClass: "bg-gradient-to-br from-red-50 to-orange-50"
+  },
+  {
     id: "nutraceuticals",
     title: "Nutraceuticals",
     icon: TestTube,
     description: "Natural ingredients with health benefits for nutritional supplements",
-    examples: ["Vitamin A", "Vitamin C (plain/coated)", "Beta Carotene"],
+    examples: ["Coenzyme Q10", "Curcumin", "Omega-3 Fatty Acids", "Resveratrol"],
     bgClass: "bg-emerald-50"
   },
 ];
@@ -42,7 +50,7 @@ const ProductCategories = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
             <div 
               key={category.id}

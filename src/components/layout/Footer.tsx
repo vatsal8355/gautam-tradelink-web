@@ -69,6 +69,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/products#vitamins" className="hover:text-[#E7F9F3] transition-colors">
+                  Vitamins
+                </Link>
+              </li>
+              <li>
                 <Link to="/products#nutraceuticals" className="hover:text-[#E7F9F3] transition-colors">
                   Nutraceuticals
                 </Link>

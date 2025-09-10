@@ -12,6 +12,10 @@ interface ProductCategory {
   icon: LucideIcon;
   products?: string[];
   productPairs?: { name: string; use: string }[];
+  aminoAcids?: {
+    title: string;
+    description: string;
+  };
 }
 
 interface ProductDisplayProps {
@@ -37,6 +41,13 @@ const ProductDisplay = ({ category, categoryData }: ProductDisplayProps) => {
           <ProductTable productPairs={categoryData.productPairs} />
         ) : (
           categoryData.products && <ProductGrid products={categoryData.products} />
+        )}
+        
+        {categoryData.aminoAcids && (
+          <div className="mt-8">
+            <h4 className="text-md font-medium mb-3">{categoryData.aminoAcids.title}</h4>
+            <p className="text-muted-foreground mb-4 text-sm">{categoryData.aminoAcids.description}</p>
+          </div>
         )}
         
         <div className="mt-6 text-center text-muted-foreground italic">

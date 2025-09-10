@@ -95,6 +95,28 @@ const Brochure = () => {
         "Talc (Pharmacuetical Grade)"
       ]
     },
+    vitamins: {
+      title: "Vitamins",
+      description: "Essential organic nutrients for growth, development, and normal body functioning",
+      products: [
+        "Inositol",
+        "Vitamin A Acetate/Palmitate (Derivates Available)",
+        "Vitamin B1 (Thiamine)",
+        "Vitamin B2 (Riboflavin)",
+        "Vitamin B3 (Niacin/Niacinamide)",
+        "Vitamin B5 (Calcium D Pantothenate) Feed Grade available",
+        "Vitamin B6 (Pyridoxine HCl)",
+        "Vitamin B7 (Biotin)",
+        "Vitamin B9 (Folic Acid)",
+        "Vitamin B12",
+        "Vitamin C Plain/Coated (Ascorbic acid)",
+        "Vitamin D2 Pure/Stabilised",
+        "Vitamin D3 Pure/Stabalised",
+        "Vitamin E 98%/50% (Liquid/Powder)",
+        "Vitamin K1",
+        "Vitamin K2 (Menaquinone-7)"
+      ]
+    },
     nutraceuticals: {
       title: "Nutraceuticals",
       description: "Natural ingredients with health benefits for nutritional supplements",
@@ -208,9 +230,9 @@ const Brochure = () => {
                     <TabsContent value="overview" className="space-y-4">
                       <h3 className="text-xl font-semibold">Company Profile</h3>
                       <p>
-                         Gautam Tradelink is a premium supplier of pharmaceutical raw materials, 
+                           Gautam Tradelink is a premium supplier of pharmaceutical raw materials, 
                          specializing in Active Pharmaceutical Ingredients (APIs), Excipients, 
-                         and Nutraceuticals. We serve pharmaceutical 
+                         Vitamins, and Nutraceuticals. We serve pharmaceutical 
                          manufacturers worldwide with high-quality ingredients that meet international standards.
                       </p>
 
@@ -245,7 +267,7 @@ const Brochure = () => {
                       <div className="space-y-8">
                          <h3 className="text-xl font-semibold">Our Product Categories</h3>
                          <p className="text-muted-foreground">
-                           We offer a comprehensive range of products across three main categories. 
+                           We offer a comprehensive range of products across four main categories. 
                            Below is a selection of our most popular products in each category.
                          </p>
 
@@ -276,6 +298,21 @@ const Brochure = () => {
                             {productCategories.excipients.products.length > 9 && (
                               <p className="text-xs text-muted-foreground mt-2">
                                 +{productCategories.excipients.products.length - 9} more products available
+                              </p>
+                            )}
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-medium text-primary">{productCategories.vitamins.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{productCategories.vitamins.description}</p>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                              {productCategories.vitamins.products.slice(0, 9).map((product, index) => (
+                                <div key={index} className="text-sm p-2 bg-muted/50 rounded">{product}</div>
+                              ))}
+                            </div>
+                            {productCategories.vitamins.products.length > 9 && (
+                              <p className="text-xs text-muted-foreground mt-2">
+                                +{productCategories.vitamins.products.length - 9} more products available
                               </p>
                             )}
                           </div>
