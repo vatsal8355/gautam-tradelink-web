@@ -101,7 +101,25 @@ const Products = () => {
       ],
       aminoAcids: {
         title: "Amino Acids",
-        description: "High-purity amino acids are used as building blocks for active ingredients, as excipients to enhance drug stability and release, in nutritional supplements, and as essential components in cell culture and media for drug research and production."
+        description: "High-purity amino acids are used as building blocks for active ingredients, as excipients to enhance drug stability and release, in nutritional supplements, and as essential components in cell culture and media for drug research and production.",
+        products: [
+          "L-Arginine",
+          "L-Aspartic Acid",
+          "L-Cysteine",
+          "L-Glutamic Acid",
+          "L-Glutamine",
+          "L-Histidine",
+          "L-Isoleucine",
+          "L-Leucine",
+          "L-Lysine",
+          "L-Methionine",
+          "L-Phenylalanine",
+          "L-Proline",
+          "L-Threonine",
+          "L-Tryptophan",
+          "L-Tyrosine",
+          "L-Valine"
+        ]
       }
     },
     vitamins: {
@@ -132,29 +150,25 @@ const Products = () => {
       description: "Natural ingredients with health benefits for nutritional supplements",
       icon: TestTube,
       products: [
+        "Alpha-Lipoic Acid",
         "Astaxanthin",
         "Beta Carotene (Synthetic/Natural)",
-        "Beta-glucan",
-        "Coenzyme Q10",
+        "Coenzyme Q10 (CoQ10)",
+        "Creatine Monohydrate",
         "Curcumin",
-        "D-biotin",
-        "Folic acid",
-        "Glucosamine sulfate",
-        "Green Tea Extract",
+        "Ginkgo Biloba",
+        "Grape Seed Extract",
         "Inositol",
-        "L-Carnitine",
-        "Lycopene",
         "Lutein",
+        "Lycopene",
         "Melatonin",
-        "Niacin (Vitamin B3)",
-        "Omega-3 Fatty Acids",
+        "Omega 3/6 Fatty Acids",
+        "Psyllium Husk",
         "Resveratrol",
-        "Riboflavin (Vitamin B2)",
-        "Selenium",
-        "Thiamine (Vitamin B1)",
-        "Vitamin A",
-        "Vitamin C (plain/coated)",
-        "Vitamin E"
+        "Soy Protein Hydrolysate",
+        "Spirulina",
+        "Whey Protein Concentrate/ Isolate",
+        "Zeaxanthin"
       ]
     }
   };

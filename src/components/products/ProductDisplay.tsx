@@ -15,6 +15,7 @@ interface ProductCategory {
   aminoAcids?: {
     title: string;
     description: string;
+    products?: string[];
   };
 }
 
@@ -45,8 +46,16 @@ const ProductDisplay = ({ category, categoryData }: ProductDisplayProps) => {
         
         {categoryData.aminoAcids && (
           <div className="mt-8">
-            <h4 className="text-md font-medium mb-3">{categoryData.aminoAcids.title}</h4>
-            <p className="text-muted-foreground mb-4 text-sm">{categoryData.aminoAcids.description}</p>
+            <CategoryDescription 
+              title={categoryData.aminoAcids.title}
+              description={categoryData.aminoAcids.description}
+              icon={categoryData.icon}
+            />
+            {categoryData.aminoAcids.products && (
+              <div className="mt-6">
+                <ProductGrid products={categoryData.aminoAcids.products} />
+              </div>
+            )}
           </div>
         )}
         
