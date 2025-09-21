@@ -13,7 +13,7 @@ const CallButton = () => {
 
   return (
     <a
-      href="tel:+919867041134"
+      href="tel:+919867920252"
       className="fixed bottom-6 right-6 z-40 lg:hidden"
       onClick={handleAnimation}
     >

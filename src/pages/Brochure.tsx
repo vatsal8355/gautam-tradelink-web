@@ -12,12 +12,12 @@ const Brochure = () => {
   // Function to handle brochure download
   const downloadBrochure = () => {
     // Create a link to the PDF file in the public directory
-    const pdfUrl = "/Gautam Tradelink- Product.pdf";
+    const pdfUrl = "/Gautam_Tradelink_Profile_and_Product_List-2.pdf";
     
     // Create a virtual link element
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Gautam Tradelink- Product.pdf"; // Set the download filename
+    link.download = "Gautam_Tradelink_Profile_and_Product_List-2.pdf"; // Set the download filename
     
     // Append to the document body, click it, and remove it
     document.body.appendChild(link);
@@ -405,7 +405,7 @@ const Brochure = () => {
                           </div>
                           <div>
                             <h4 className="text-lg font-medium">Phone</h4>
-                            <p className="text-muted-foreground">Vatsalbhai Shah: +91 9867041134</p>
+                            <p className="text-muted-foreground">Vatsalbhai Shah: +91 9867920252</p>
                           </div>
                         </div>
 

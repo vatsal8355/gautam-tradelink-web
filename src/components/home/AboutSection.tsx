@@ -9,7 +9,7 @@ const AboutSection = () => {
         <div className="text-center mb-10">
           <h2 className="heading-lg mb-6">About Gautam Tradelink</h2>
           <p className="text-[#0F5E59] max-w-3xl mx-auto">
-            Gautam Tradelink is a premier supplier of pharmaceutical raw materials, 
+            Gautam Tradelink is a Premium supplier of pharmaceutical raw materials, 
             serving clients across India and internationally. Based in Mumbai with a strong 
             presence in Gujarat, we've built our reputation on providing high-quality 
             pharmaceutical ingredients that meet IP, BP, and USP standards.

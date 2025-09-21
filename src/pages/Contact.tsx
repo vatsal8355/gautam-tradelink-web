@@ -125,10 +125,10 @@ const Contact = () => {
                         <h3 className="font-medium mb-1">Phone</h3>
                         <p className="text-muted-foreground mb-1">Vatsalbhai Shah</p>
                         <a
-                          href="tel:+919867041134"
+                          href="tel:+919867920252"
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
-                          +91 9867041134
+                          +91 9867920252
                         </a>
                       </div>
                     </div>

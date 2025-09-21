@@ -89,7 +89,7 @@ const Footer = () => {
                 <Phone size={18} className="mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
                   <p className="font-medium">Vatsalbhai Shah</p>
-                  <p>+91 9867041134</p>
+                  <p>+91 9867920252</p>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
