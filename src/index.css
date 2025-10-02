@@ -41,6 +41,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: auto !important;
+  }
+
   body {
     @apply bg-background text-foreground font-body;
   }

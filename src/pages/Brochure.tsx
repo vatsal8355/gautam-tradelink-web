@@ -12,12 +12,12 @@ const Brochure = () => {
   // Function to handle brochure download
   const downloadBrochure = () => {
     // Create a link to the PDF file in the public directory
-    const pdfUrl = "/Gautam_Tradelink_Profile_and_Product_List-2.pdf";
+    const pdfUrl = "/Gautam_Tradelink_Profile_and_Product_List-2-2.pdf";
     
     // Create a virtual link element
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Gautam_Tradelink_Profile_and_Product_List-2.pdf"; // Set the download filename
+    link.download = "Gautam_Tradelink_Profile_and_Product_List-2-2.pdf"; // Set the download filename
     
     // Append to the document body, click it, and remove it
     document.body.appendChild(link);
@@ -427,13 +427,13 @@ const Brochure = () => {
                           <div>
                             <h4 className="text-lg font-medium">Office Address</h4>
                             <p className="text-muted-foreground">
-                              901, Deepak Residency, Bhogilal Fadia Road,
+                              199/A, 1st Floor, Raghuleela Mega Mall,
                               <br />
-                              Kandivali (west), Mumbai - 400067
+                              Kandivali West, Mumbai-400067
                             </p>
                             <p className="text-sm mt-1">
                               <a 
-                                href="https://maps.app.goo.gl/GZNrfEuecCwjwu9E7?g_st=iw" 
+                                href="https://maps.app.goo.gl/zKKzw9jjfuKTN4YS7" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="text-primary hover:text-primary/80"

@@ -106,7 +106,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                 <span className="text-sm">
-                  901, Deepak Residency, Bhogilal Fadia Road, Kandivali (west), Mumbai - 400067
+                  199/A, 1st Floor, Raghuleela Mega Mall, Kandivali West, Mumbai-400067
                 </span>
               </li>
             </ul>

@@ -169,12 +169,12 @@ const Contact = () => {
                       <div>
                         <h3 className="font-medium mb-1">Office Address</h3>
                         <p className="text-muted-foreground mb-2">
-                          901, Deepak Residency, Bhogilal Fadia Road,
+                          199/A, 1st Floor, Raghuleela Mega Mall,
                           <br />
-                          Kandivali (west), Mumbai - 400067
+                          Kandivali West, Mumbai-400067
                         </p>
                         <a 
-                          href="https://maps.app.goo.gl/GZNrfEuecCwjwu9E7?g_st=iw" 
+                          href="https://maps.app.goo.gl/zKKzw9jjfuKTN4YS7" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-primary hover:text-primary/80 text-sm font-medium"
@@ -327,7 +327,7 @@ const Contact = () => {
             <h2 className="text-2xl font-semibold mb-8 text-center">Our Location</h2>
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.665605120524!2d72.84862547611711!3d19.169460948693778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d4c5fd1e2d%3A0xe9bd2694128fe5a0!2sDeepak%20Residency%2C%20Bhogilal%20Fadia%20Rd%2C%20Kandivali%20West%2C%20Mumbai%2C%20Maharashtra%20400067!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.3938176!2d72.8365!3d19.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f3e6f6db83%3A0x7d7e73c7d8c8e0c5!2sRaghuleela%20Mega%20Mall!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
