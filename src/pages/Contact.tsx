@@ -174,7 +174,7 @@ const Contact = () => {
                           Kandivali West, Mumbai-400067
                         </p>
                         <a 
-                          href="https://maps.app.goo.gl/zKKzw9jjfuKTN4YS7" 
+                          href="https://maps.app.goo.gl/9rXezjN1Y5Yc46vn6?g_st=ipc" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-primary hover:text-primary/80 text-sm font-medium"
@@ -327,7 +327,7 @@ const Contact = () => {
             <h2 className="text-2xl font-semibold mb-8 text-center">Our Location</h2>
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.3938176!2d72.8365!3d19.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f3e6f6db83%3A0x7d7e73c7d8c8e0c5!2sRaghuleela%20Mega%20Mall!5e0!3m2!1sen!2sin!4v1652893560776!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.3607698646744!2d72.83385597587888!3d19.206891250238954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f85c0e0f6d%3A0x8ed37e7c0f4e6a8f!2sRaghuleela%20Mega%20Mall!5e0!3m2!1sen!2sin!4v1709123456789!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
