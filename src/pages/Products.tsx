@@ -97,7 +97,7 @@ const Products = () => {
         "Talc (Pharmacuetical Grade)",
         "Taurine (Not for medical)",
         "Titanium Dioxide",
-        "Xanathan Gum"
+        "Xanthan Gum"
       ],
       aminoAcids: {
         title: "Amino Acids",
